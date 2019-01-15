@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+/*
+Theme Name: MYU WordPress
+Author: umetaman
+Description: DMCオリジナルのWordPressテーマです
+version: 1.0.0
+*/
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+body{
+    font-family: 'Noto Sans JP', sans-serif, 'メイリオ', 'Meiryo';
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: bold;
+}
+
+footer{
+    color: #999999;
+}
