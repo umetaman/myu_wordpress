@@ -24,3 +24,88 @@ h1, h2, h3, h4, h5, h6{
 footer{
     color: #999999;
 }
+
+/*デバッグ*/
+.contents, #sidebar{
+    height: 800px;
+}
+
+header{
+    background-color: #888;
+}
+
+.header-inner{
+    background-color: #ccc;
+    height: 200px;
+}
+
+.container{
+    background-color: #9db2ea;
+}
+
+.contents{
+    background-color: #a5e2ff;
+}
+
+#sidebar{
+    background-color: #aefffc;
+}
+
+footer{
+    background-color: #777;
+}
+
+.footer-inner{
+    background-color: #ddd;
+    height: 250px;
+}
+
+/*Width*/
+.header-inner, .container, .footer-inner{
+    max-width: 1200px;
+    margin: auto;
+
+    /*ボックスサイズの定義*/
+    padding: 10px;
+    /* paddingを含めた大きさとする */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.contents, #sidebar{
+    margin: 20px 0;
+}
+
+/* スマートフォン対応 */
+@media (min-width: 768px){
+    /* コンテンツ、及びサイドバーは横並び */
+    .container:after{
+        display: block;
+        clear: both;
+        content: '';
+    }
+
+    .contents{
+        float: left;
+        widows: 70%;
+        margin-right: 2%;
+    }
+
+    #sidebar{
+        float: left;
+        width: 28%;
+    }
+}
+
+@media (min-width: 600px){
+    
+}
+
+@media (max-width: 767px){
+    
+}
+
+@media (max-width: 599px){
+    
+}
