@@ -77,7 +77,58 @@ footer{
     margin: 20px 0;
 }
 
+/* サイトタイトル */
+.site-title{
+    text-align: left;
+}
+
+.site-title h1{
+    margin: 0;
+    padding: 10px 5px 0;
+    line-height: 1;
+}
+
+.site-title h1 img{
+    width: auto;
+    height: 70px;
+}
+
+.site-title a{
+    display: block;
+}
+
 /* スマートフォン対応 */
+/* メニューボタン */
+.header-inner{
+    position: relative;
+}
+
+#navbutton{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border: solid 1px #aaa;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+#navbutton:hover{
+    background-color: #ddd;
+}
+
+#navbutton:focus{
+    outline: none;
+}
+
+#navbutton i {
+    font-size: 2em;
+    color: #333;
+}
+
 @media (min-width: 768px){
     /* コンテンツ、及びサイドバーは横並び */
     .container:after{
@@ -93,7 +144,7 @@ footer{
     }
 
     #sidebar{
-        float: left;
+        float: right;
         width: 28%;
     }
 }
@@ -103,7 +154,41 @@ footer{
 }
 
 @media (max-width: 767px){
-    
+    /*スマホ用 ヘッダーナビゲーション */
+    #header-nav{
+        display: none;
+    }
+
+    .header-nav{
+        padding-left: 10px;
+    }
+
+    .header-nav ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .header-nav li a:before{
+        content: "\f0da";
+        font-family: "Font Awesome 5 Free";
+        color: #555;
+        font-size: 0.9em;
+        padding-right: 3px;
+    }
+
+    .header-nav li a{
+        display: block;
+        padding: 15px 5px;
+        color: #000;
+        font-weight: bold;
+        font-size: 1em;
+        text-decoration: none;
+    }
+
+    .header-nav li a:hover{
+        opacity: 0.8;
+    }
 }
 
 @media (max-width: 599px){

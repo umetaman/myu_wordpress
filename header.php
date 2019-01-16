@@ -13,8 +13,32 @@
 <body　<?php body_class(); ?>>
     <header>
         <div class="header-inner">
+            <!-- タイトルを画像にする -->
+            <div class="site-title">
+                <h1>
+                    <a href="<?php echo home_url(); ?>">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/dmc_logo.png" alt="<?php bloginfo("name");?>">
+                    </a>
+                </h1>
+            </div>
 
+            <!-- スマートフォン用のメニューボタン -->
+            <button type="button" id="navbutton">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
+        <!-- ヘッダー -->
+        <?php
+            wp_nav_menu(
+                array(
+                    "theme_location" => "header-nav",   //functions.phpに記述した値との関連付け
+                    "container" => "nav",               //ナビゲーション全体を囲むタグの指定
+                    "container_class" => "header-nav",  //containerのクラス
+                    "container_id" => "header-nav",
+                    "fallback_cb" => ""                 //ナビゲーションメニューが空のとき
+                )
+            );
+        ?>
     </header>
 </body>
 </html>
