@@ -3,12 +3,15 @@
 ?>
 
 <div class="container">
-    <div class="contents">
-
-    </div>
+    <div id="main-infomation">
     <?php
-        get_sidebar();
+        //メインウィジェット追加
+        dynamic_sidebar("main-info");
     ?>
+    </div>
+    <div class="contents">
+        
+    </div>
 </div>
 <?php
     get_footer();

@@ -24,6 +24,16 @@
             array("jquery") //依存しているスクリプト
         );
     }
-
     add_action("wp_enqueue_scripts", "navbutton_scripts");
+
+
+    //ヘッダーウィジェットの追加
+    register_sidebar(array(
+        "name" => "メインウィジェット",
+        "id" => "main-info",
+        "before_widget" => '<div class="main-widget">',
+        "after_widget" => '</div>',
+        "before_title" => '<h2 class="main-widget-title">',
+        "after_title" => '</h2>'
+    ));
 ?>

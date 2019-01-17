@@ -55,9 +55,48 @@ footer{
     background-color: #777;
 }
 
+.footer-nav{
+    margin-bottom: 20px;
+}
+
+.footer-nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-nav ul:after{
+    display: block;
+    clear: both;
+    content: "";
+}
+
+.footer-nav li{
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+
+.footer-nav li a{
+    font-size: 0.9em;
+    display: block;
+    padding: 10px 5px;
+    text-decoration: none;
+}
+
+.footer-nav li a:hover{
+    opacity: 0.6;
+}
+
 .footer-inner{
     background-color: #ddd;
     height: 250px;
+}
+
+.copyright p {
+    font-size: 0.9em;
+    margin: 0;
+    text-align: center;
 }
 
 /*Width*/
@@ -129,6 +168,29 @@ footer{
     color: #333;
 }
 
+/* メインウィジェット用 */
+
+#main-infomation{
+    /* debug */
+    background-color: #000;
+    
+    display: flex;
+}
+
+.main-widget{
+    /* Debug */
+    background-color: yellow;
+    
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    margin: 10px;
+}
+
+
+
 @media (min-width: 768px){
     /* コンテンツ、及びサイドバーは横並び */
     .container:after{
@@ -146,6 +208,34 @@ footer{
     #sidebar{
         float: right;
         width: 28%;
+    }
+
+    /* PCヘッダー */
+    #header-nav{
+        display: block!important;
+    }
+    .header-nav{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 10px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .header-nav ul:after{
+        display: block;
+        clear: both;
+        content: "";
+    }
+    .header-nav li{
+        display: inline-block;
+        width: auto;
+    }
+    .header-nav li a{
+        font-size: 1.1em;
+        padding: 5px 10px;
+    }
+    #navbutton{
+        display: none;
     }
 }
 
@@ -188,6 +278,15 @@ footer{
 
     .header-nav li a:hover{
         opacity: 0.8;
+    }
+
+    /* メインウィジェット */
+    #main-infomation{
+        display: inherit;
+    }
+
+    .main-widget{
+        width: 100%;
     }
 }
 
