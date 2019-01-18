@@ -23,7 +23,7 @@
   - 操作するのは、運営委員のみ。
   - イベント設定 -> ディスプレイ -> イベントテンプレートは、必ず「デフォルトイベントテンプレート」とすること。
   - Export機能はつけない。
-    - https://theeventscalendar.com/extensions/remove-export-links/
+    - CSS非表示にする。
 - Duplicate Post
   - https://ja.wordpress.org/plugins/duplicate-post/
   - 固定ページを複製する。
