@@ -21,6 +21,9 @@
   - ワークショップの日付を掲載。イベント内容の詳細の告知
   - 専用ページとは別に、このプラグインから直近のイベントを取得して、トップページに掲載する。
   - 操作するのは、運営委員のみ。
+  - イベント設定 -> ディスプレイ -> イベントテンプレートは、必ず「デフォルトイベントテンプレート」とすること。
+  - Export機能はつけない。
+    - https://theeventscalendar.com/extensions/remove-export-links/
 - Duplicate Post
   - https://ja.wordpress.org/plugins/duplicate-post/
   - 固定ページを複製する。

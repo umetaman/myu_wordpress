@@ -36,4 +36,5 @@
         "before_title" => '<h2 class="main-widget-title">',
         "after_title" => '</h2>'
     ));
+    
 ?>

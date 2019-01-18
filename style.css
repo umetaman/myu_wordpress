@@ -189,7 +189,21 @@ footer{
     margin: 10px;
 }
 
+/* 今後のイベント情報 */
+#main-infomation > div:nth-child(2) > ol{
+    list-style: none;
+    padding-left: 10px;
+}
 
+/* エクスポートボタンは無効 */
+#tribe-events-content > a{
+    display: none!important;
+}
+
+/* 次のイベントへのナビゲーション（上部）の削除 */
+#tribe-events-header{
+    display: none;
+}
 
 @media (min-width: 768px){
     /* コンテンツ、及びサイドバーは横並び */
@@ -293,3 +307,4 @@ footer{
 @media (max-width: 599px){
     
 }
+
