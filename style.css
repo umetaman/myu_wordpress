@@ -26,9 +26,9 @@ footer{
 }
 
 /*デバッグ*/
-.contents, #sidebar{
-    height: 800px;
-}
+/* .contents, #sidebar{
+    height: 100%;   
+} */
 
 header{
     background-color: #888;
@@ -44,7 +44,18 @@ header{
 }
 
 .contents{
-    background-color: #a5e2ff;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 0 auto;
+
+    /* paddingを含めた大きさとする */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 #sidebar{
@@ -251,10 +262,16 @@ footer{
     #navbutton{
         display: none;
     }
+
+    .wp-block-column{
+        margin: 20px;
+    }
 }
 
 @media (min-width: 600px){
-    
+    .wp-block-columns > .wp-block-column{
+        flex-basis: 100%;
+    }
 }
 
 @media (max-width: 767px){
@@ -308,3 +325,7 @@ footer{
     
 }
 
+/* Gutenbergの補助 */
+.wp-block-columns > .wp-block-column{
+
+}
