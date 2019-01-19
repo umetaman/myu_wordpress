@@ -10,7 +10,10 @@
     ?>
     </div>
     <div class="contents">
-        
+        <h2><?php the_title(); ?></h2>
+        <div class="post-content">
+            <p>It Works!</p>
+        </div>
     </div>
 </div>
 <?php
