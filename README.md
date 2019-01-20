@@ -4,8 +4,30 @@
 ## 開発環境
 - WordPress version5.0.3
   - https://ja.wordpress.org/download/
+  - ClassicEditorが個人的に嫌なので、新しいGutenbergEditorを使う。
+  - GutenbergもCSSが不十分なので、独自に拡張していく。
 - FontAwesome version5.6.3
   - https://fontawesome.com/
+  - フリーのアイコンフォント。
+- XAMPP(v3.2.2)
+  - 本番の環境(dmc.myu.ac.jp)を汚したくないので、ローカルで作業してから、引っ越す。
+- Webブラウザー
+  - Firefox(Developer Edition)
+  - Google Chrome
+- p5.js
+  - https://p5js.org/
+  - Webで動くProcessingのようなもの。Canvas要素にレンダリングする。
+  - そこそこ高機能。DOMも動かせる。
+  - Firefoxだとほぼ静止画。
+  - どこかのサーバーに上げて、iframeで埋め込む。
+
+## 開発について補足
+- Internet ExplorerとMicrosoft Edgeではあまり検証しない。
+  - IEはこれから置き去りにされていく。
+    - https://webrage.jp/techblog/pc_browser_share/
+  - EdgeはChromiumベースになることが確定。
+    - http://www.itmedia.co.jp/pcuser/articles/1812/09/news016.html
+- SafariはDMCの誰かに期待する。
 
 ## 追加する拡張機能
 - Contact Form 7
@@ -44,7 +66,8 @@
   - イベントカレンダー
 - トップページ
   - 新着情報
-  - イベント告知
+    - 最新の記事
+    - 最新のイベント
   - データ＆メディアコモンズとは？
     - マップ
     - オープンスタディ
