@@ -46,7 +46,6 @@ header{
 }
 
 .contents{
-    background-color: #fff;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -130,7 +129,13 @@ footer{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 10px 20px;
+    padding: 10px 30px;
+}
+
+/* columnの画像 */
+.wp-block-image img{
+    width: 100%;
+    height: auto;
 }
 
 /* サイトタイトル */
@@ -195,6 +200,10 @@ footer{
     display: none;
 }
 
+.wp-block-columns > .wp-block-column{
+    margin: 32px!important;
+}
+
 @media (min-width: 768px){
     /* コンテンツ、及びサイドバーは横並び */
     .container:after{
@@ -241,10 +250,6 @@ footer{
     #navbutton{
         display: none;
     }
-
-    .wp-block-column{
-        margin: 20px;
-    }
 }
 
 @media (min-width: 600px){
@@ -288,6 +293,10 @@ footer{
 
     .header-nav li a:hover{
         opacity: 0.8;
+    }
+
+    ul {
+        padding-left: 20px;
     }
 
     /* メインウィジェット */
