@@ -7,6 +7,7 @@ Description: DMCオリジナルのWordPressテーマです
 version: 1.0.0
 */
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+@import "main-widget.css";
 
 body{
     font-family: 'Noto Sans JP', sans-serif, 'メイリオ', 'Meiryo';
@@ -26,8 +27,9 @@ footer{
 }
 
 /*デバッグ*/
-.contents, #sidebar{
+.contents{
     height: 800px;
+    width: 100%;
 }
 
 header{
@@ -112,8 +114,12 @@ footer{
     box-sizing: border-box;
 }
 
-.contents, #sidebar{
+.contents{
     margin: 20px 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px 20px;
 }
 
 /* サイトタイトル */
@@ -166,33 +172,6 @@ footer{
 #navbutton i {
     font-size: 2em;
     color: #333;
-}
-
-/* メインウィジェット用 */
-
-#main-infomation{
-    /* debug */
-    background-color: #000;
-    
-    display: flex;
-}
-
-.main-widget{
-    /* Debug */
-    background-color: yellow;
-    
-    width: 50%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-
-    margin: 10px;
-}
-
-/* 今後のイベント情報 */
-#main-infomation > div:nth-child(2) > ol{
-    list-style: none;
-    padding-left: 10px;
 }
 
 /* エクスポートボタンは無効 */
@@ -296,11 +275,11 @@ footer{
 
     /* メインウィジェット */
     #main-infomation{
-        display: inherit;
+        flex-direction: column;
     }
 
     .main-widget{
-        width: 100%;
+        width: auto;
     }
 }
 
