@@ -14,13 +14,13 @@
     <header>
         <div class="header-inner">
             <!-- タイトルを画像にする -->
-            <div class="site-title">
+            <!-- <div class="site-title">
                 <h1>
                     <a href="<?php echo home_url(); ?>">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/dmc_logo.png" alt="<?php bloginfo("name");?>">
                     </a>
                 </h1>
-            </div>
+            </div> -->
 
             <!-- スマートフォン用のメニューボタン -->
             <button type="button" id="navbutton">
