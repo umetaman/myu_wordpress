@@ -2,6 +2,8 @@
 
 #main-infomation{
     display: flex;
+    filter: drop-shadow(4px 4px 4px rgba(0,0,0,0.35));
+    margin: 40px 0;
 }
 
 .main-widget{
@@ -12,9 +14,6 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    
-    margin: 10px;
-    line-height: 1em;
 }
 
 .main-widget h2{
