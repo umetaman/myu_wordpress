@@ -12,6 +12,9 @@
 </head>
 <body　<?php body_class(); ?>>
     <header>
+        <div id="p5-canvas">
+            <iframe class="p5-animation" scrolling="no" src="<?php echo get_template_directory_uri().'/p5js/index.html'; ?>" frameborder="none"></iframe>
+        </div>
         <div class="header-inner">
             <!-- タイトルを画像にする -->
             <!-- <div class="site-title">

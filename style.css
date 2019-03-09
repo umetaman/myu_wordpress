@@ -28,7 +28,7 @@ footer{
 }
 
 .wp-block-separator{
-    margin: 30px 0;
+    margin: 30px;
 }
 
 /*デバッグ*/
@@ -37,13 +37,18 @@ footer{
     width: 100%;
 } 
 
-header{
-    background-color: #888;
+.header-inner{
+    padding: 0;
 }
 
-.header-inner{
-    background-color: #ccc;
-    height: 400px;
+/* p5js Animation */
+#p5-canvas{
+    height: fit-content;
+}
+
+#p5-canvas .p5-animation{
+    width: 100%;
+    height: 350px;
 }
 
 /* デスクトップ版ナビゲーション */
@@ -86,14 +91,9 @@ header{
 
 #main-infomation .main-widget{
     border-radius: 10px;
+    border: 1px solid #eee;
     padding: 10px;
-}
-
-.p5-animation{
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 200px;
+    margin: 15px;
 }
 
 .container{
@@ -119,7 +119,7 @@ header{
 }
 
 footer{
-    background-color: #777;
+    background-color: #ddd;
 }
 
 .footer-nav{
@@ -157,7 +157,7 @@ footer{
 
 .footer-inner{
     background-color: #ddd;
-    height: 250px;
+    height: 150px;
 }
 
 .copyright p {
@@ -280,6 +280,10 @@ footer{
     }
 
     /* PCヘッダー */
+    .header-inner{
+        display: none;
+    }
+
     #header-nav{
         display: block!important;
     }
@@ -367,4 +371,79 @@ footer{
 
 @media (max-width: 599px){
     
+}
+
+/*form */
+.wpcf7-form{
+    box-sizing: border-box;
+}
+
+.wpcf7-form p:nth-child(-n+3){
+    margin: 0;
+    height: 90px; 
+}
+
+.wpcf7-form p:nth-child(3){
+    margin: 0;
+    height: 100px; 
+}
+
+.input_box{
+    position: relative;
+    width: 80%;
+    margin: 15px 3%;
+}
+
+.input_textarea textarea{
+    font-family: 'Noto Sans JP', sans-serif, 'メイリオ', 'Meiryo';
+    min-height: 200px;
+    resize: vertical;
+}
+
+.input_box input[type=text], .input_box input[type=email], .input_textarea textarea{
+    box-sizing: border-box;
+    font-size: 16px;
+    width: 95%;
+    margin: 0;
+    padding: 15px;
+    transition: 0.3s;
+    border: 2px solid #aaa;
+    border-radius: 5px;
+    outline: none;
+}
+
+.input_box input[type=text]:focus, 
+.input_box input[type=email]:focus,
+.input_textarea textarea:focus{
+    border-color: red;
+}
+
+.input_box input[type=text], .input_box input[type=email]{
+    padding-left: 40px;
+}
+
+.input_box i{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 9px 3px;
+    transition: 0.3s;
+    color: #aaa;
+    z-index: 3;
+}
+
+#contact_send{
+    font-size: 16px;
+    padding: 10px 50px;
+    border-radius: 7px;
+    border: 2px solid #111;
+    background-color: #333;
+    color: #fff;
+    transition: 0.1s;
+}
+
+#contact_send:hover{
+    border: 2px solid #111;
+    background-color: #fff;
+    color: #333;
 }
