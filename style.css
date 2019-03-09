@@ -285,7 +285,7 @@ footer{
     }
 
     #header-nav{
-        display: block!important;
+        display: block;
     }
     .header-nav{
         /* max-width: 1200px; */
@@ -328,10 +328,15 @@ footer{
         padding-left: 10px;
     }
 
-    .header-nav ul{
+    .header-nav #menu-header{
         margin: 0;
         padding: 0;
         list-style: none;
+        display: inline;
+    }
+
+    .header-nav #menu-header > li{
+        text-align: left;
     }
 
     .header-nav li a:before{
