@@ -115,3 +115,9 @@
 - https://plusers.net/wordpress_theme_0
 - これからのCSSレイアウトはFlexbox
   - https://www.webcreatorbox.com/tech/flexbox
+
+## index.phpについて
+WordPressにおけるindex.phpファイルは、通常のWebサイトのindex(*.php, *.html)とは違う。
+
+- front-page.phpとかsingle.phpとかが存在しないとき、最終的にたどり着く。
+- テーマを構成するファイルに必須である。
