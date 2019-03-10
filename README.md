@@ -1,6 +1,21 @@
 # MYU WordPress
 宮城大学データ＆メディアコモンズのWebサイト用のWordPressテーマです。
 
+## To Do
+- CSSの分割
+  - 拡張機能に依存するものは別ファイルにするか、WordPressのカスタマイズ内のCSSに含める。
+- スマートフォン版への対応
+  - 2Columnレイアウトが1Columnレイアウトになったとき、幅が狭い。
+  - p5jsのキャンバスは表示しないようにする。
+- Firefoxでp5jsのCanvas要素に謎の枠線が入る。
+- フォームの行き先を決定。
+  - サポートカウンターのメール
+  - SlackにWebhook
+- イベントカレンダーのレイアウト再設計
+  - デフォルトだと使いづらい。
+  - 余計な機能が多いので、削除するか、CSSで隠す。
+
+
 ## 開発環境
 - WordPress version5.0.3
   - https://ja.wordpress.org/download/
