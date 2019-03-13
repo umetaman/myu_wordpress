@@ -11,9 +11,14 @@
 - フォームの行き先を決定。
   - サポートカウンターのメール
   - SlackにWebhook
+- ContactFormの送信メールの設定
+  - myu.ac.jpにするには、専用のプラグインが必要？
+  - https://www.adminweb.jp/wordpress-plugin/function/index12.html
 - イベントカレンダーのレイアウト再設計
   - デフォルトだと使いづらい。
   - 余計な機能が多いので、削除するか、CSSで隠す。
+- p5.js
+  - height: 400px
 
 
 ## 開発環境
@@ -72,6 +77,8 @@
   - https://ja.wordpress.org/plugins/all-in-one-wp-migration/
   - WordPressをデータベースの内容ごと引っ越しする。
   - ただし、データベースがめちゃくちゃになるので、ほとんど最終手段。
+- WP Mail SMTP by WPForms
+  - https://wordpress.org/plugins/wp-mail-smtp/
 
 ## サイトマップ
 - グローバルナビゲーション
