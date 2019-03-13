@@ -19,7 +19,8 @@
   - 余計な機能が多いので、削除するか、CSSで隠す。
 - p5.js
   - height: 400px
-
+- 投稿の記事(CSS)
+  - thumbnailを中央寄せ(.post-image)
 
 ## 開発環境
 - WordPress version5.0.3
