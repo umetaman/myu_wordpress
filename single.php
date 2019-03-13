@@ -32,7 +32,7 @@
         </div>
         
         <!-- 記事のタイトル -->
-        <h1><?php the_title(); ?></h1>
+        <h1 id="post-title"><?php the_title(); ?></h1>
         
         <!-- アイキャッチ画像 -->
         <?php if(has_post_thumbnail()): ?>

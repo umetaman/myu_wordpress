@@ -15,12 +15,15 @@
         <div id="p5-canvas">
             <iframe class="p5-animation" scrolling="no" src="<?php echo get_template_directory_uri().'/p5js/index.html'; ?>" frameborder="none"></iframe>
         </div>
+        <div id="dmc-logo">
+            <img src="<?php echo get_template_directory_uri(); ?>/p5js/image/web_dmc_header.png" alt="<?php bloginfo("name");?>">
+        </div>
         <div class="header-inner">
             <!-- タイトルを画像にする -->
             <!-- <div class="site-title">
                 <h1>
                     <a href="<?php echo home_url(); ?>">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/dmc_logo.png" alt="<?php bloginfo("name");?>">
+                        <img src="<?php echo get_template_directory_uri(); ?>/p5js/image/web_dmc_header.jpg" alt="<?php bloginfo("name");?>">
                     </a>
                 </h1>
             </div> -->

@@ -36,6 +36,16 @@ footer{
     width: 100%;
 } 
 
+header #dmc-logo img{
+    width: 100%;
+    height: auto;
+}
+
+header #dmc-logo{
+    text-align: center;
+    display: none;
+}
+
 .header-inner{
     padding: 0;
 }
@@ -318,6 +328,14 @@ footer{
 }
 
 @media (max-width: 767px){
+    #p5-canvas{
+        display: none;
+    }
+
+    header #dmc-logo{
+        display: inherit;
+    }
+
     /*スマホ用 ヘッダーナビゲーション */
     #header-nav{
         display: none;
@@ -379,6 +397,20 @@ footer{
 
 @media (max-width: 599px){
     
+}
+
+/* 投稿ページ */
+.post-article #post-title{
+    font-size: 30px;
+}
+
+.post-image{
+    text-align: center;
+}
+
+.post-image img{
+    width: 100%;
+    height: auto;
 }
 
 /*form */
