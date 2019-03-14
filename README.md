@@ -3,24 +3,18 @@
 
 ## To Do
 - CSSの分割
-  - 拡張機能に依存するものは別ファイルにするか、WordPressのカスタマイズ内のCSSに含める。
-- スマートフォン版への対応
-  - 2Columnレイアウトが1Columnレイアウトになったとき、幅が狭い。
-  - p5jsのキャンバスは表示しないようにする。
-- Firefoxでp5jsのCanvas要素に謎の枠線が入る。
+  - フォームのCSSは「カスタマイズ」で追記する。
 - フォームの行き先を決定。
   - サポートカウンターのメール
   - SlackにWebhook
 - ContactFormの送信メールの設定
-  - myu.ac.jpにするには、専用のプラグインが必要？
-  - https://www.adminweb.jp/wordpress-plugin/function/index12.html
+  - 自分の学内メールアドレスからの送信を確認。
+  - 誰のメールアドレスにする？
 - イベントカレンダーのレイアウト再設計
   - デフォルトだと使いづらい。
   - 余計な機能が多いので、削除するか、CSSで隠す。
 - p5.js
   - height: 400px
-- 投稿の記事(CSS)
-  - thumbnailを中央寄せ(.post-image)
 
 ## 開発環境
 - WordPress version5.0.3
