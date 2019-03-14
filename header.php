@@ -13,7 +13,7 @@
 <body　<?php body_class(); ?>>
     <header>
         <div id="p5-canvas">
-            <iframe class="p5-animation" scrolling="no" src="<?php echo get_template_directory_uri().'/p5js/index.html'; ?>" frameborder="none"></iframe>
+            <iframe class="p5-animation" scrolling="no" src="<?php echo get_template_directory_uri().'/p5js/index.html'; ?>" frameborder="0"></iframe>
         </div>
         <div id="dmc-logo">
             <img src="<?php echo get_template_directory_uri(); ?>/p5js/image/web_dmc_header.png" alt="<?php bloginfo("name");?>">
