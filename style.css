@@ -399,6 +399,31 @@ footer{
     
 }
 
+/* トップに戻る */
+#page-top{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#page-top i{
+    padding-top: 6px;
+}
+
+#page-top a{
+    display: block;
+    z-index: 999;
+    background-color: #a8a8a8;
+    padding: 8px 16px;
+    border-radius: 50%;
+    color: #fff;
+}
+
+#page-top a{
+    text-decoration: none;
+    opacity: 0.7;
+}
+
 /* 投稿ページ */
 .post-article #post-title{
     font-size: 30px;
