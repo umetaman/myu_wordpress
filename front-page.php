@@ -21,26 +21,29 @@
 <p id="page-top"><a href="#"><i class="fas fa-angle-up"></i></a></p>
 
 <script>
-$(function(){
+jQuery(function($){
     var topButton = $('#page-top');
-    topButton.hide();
+    
+    $(function(){
+        topButton.hide();
 
-    //表示設定
-    $(window).scroll(function(){
-        if($(this).scrollTop() > 80){
-            topButton.fadeIn();
-        }else{
-            topButton.fadeOut();
-        }
-    })
-});
+        //表示設定
+        $(window).scroll(function(){
+            if($(this).scrollTop() > 80){
+                topButton.fadeIn();
+            }else{
+                topButton.fadeOut();
+            }
+        })
+    });
 
-topButton.click(function(){
-    $('body,html').animate(
-        {scrollTop: 0}, 500
-    );
+    topButton.click(function(){
+        $('body,html').animate(
+            {scrollTop: 0}, 500
+        );
 
-    return false;
+        return false;
+    });
 });
 </script>
 
