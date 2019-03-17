@@ -1,24 +1,6 @@
 # MYU WordPress
 宮城大学データ＆メディアコモンズのWebサイト用のWordPressテーマです。
 
-## To Do
-- パーマリンクの検討
-  - 自由につけられるとよいが、GutenbergEditorが使い物にならなくなる。
-  - http://dmc.myu.ac.jp/how-to-use みたいに、自分でつけたい。
-- CSSの分割
-  - フォームのCSSは「カスタマイズ」で追記する。
-- フォームの行き先を決定。
-  - サポートカウンターのメール
-  - SlackにWebhook
-- ContactFormの送信メールの設定
-  - 自分の学内メールアドレスからの送信を確認。
-  - 誰のメールアドレスにする？
-- イベントカレンダーのレイアウト再設計
-  - デフォルトだと使いづらい。
-  - 余計な機能が多いので、削除するか、CSSで隠す。
-- p5.js
-  - height: 400px
-
 ## 開発環境
 - WordPress version5.0.3
   - https://ja.wordpress.org/download/
