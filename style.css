@@ -437,3 +437,12 @@ footer{
     width: 100%;
     height: auto;
 }
+
+/* カレンダー出力ボタンの非表示 */
+.tribe-block.tribe-block__events-link > .tribe-block__btn--link.tribe-block__events-gcal > a{
+    display: none;
+}
+
+div.tribe-block.tribe-block__events-link > div.tribe-block__btn--link.tribe-block__-events-ical > a{
+    display: none;
+}
