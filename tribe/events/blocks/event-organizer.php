@@ -26,7 +26,8 @@ $email   = tribe_get_organizer_email( $organizer );
 ?>
 <div class="tribe-block tribe-block__organizer__details tribe-clearfix">
 	<div class="tribe-block__organizer__title">
-		<h3><?php echo tribe_get_organizer( $organizer ); ?></h3>
+		<h3><i class="fas fa-user-alt"></i>主催者</h3>
+		<h4><?php echo tribe_get_organizer( $organizer ); ?></h4>
 	</div>
 	<?php if ( ! empty( $phone ) ) : ?>
 		<p class="tribe-block__organizer__phone"><i class="fas fa-mobile-alt"></i><?php echo esc_html( $phone ); ?></p>

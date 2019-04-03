@@ -25,6 +25,6 @@ $website = tribe_get_venue_website_link();
 
 <div class="tribe-block__venue__meta">
 	<div class="tribe-block__venue__name">
-		<h3><?php echo tribe_get_venue() ?></h3>
+		<h3><i class="fas fa-map-marker-alt"></i><?php echo tribe_get_venue() ?></h3>
 	</div>
 </div>

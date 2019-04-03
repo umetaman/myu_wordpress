@@ -2,6 +2,33 @@
 MYU Wordpress + The Event Calendar
 */
 
-.tribe-block__organizer__details p > i{
+/* アイコン */
+.tribe-block__organizer__details p > i, 
+.tribe-block__venue__name i,
+.tribe-block__organizer__title i
+{
     margin-right: 10px; 
+}
+
+/* 主催者 */
+.tribe-block__organizer__title > h4{
+    margin: 0;
+    font-size: 1.5em;
+}
+
+/* 主催者と開催場所を並列に */
+.tribe-block__organizer__details{
+    /* debug */
+    background-color: aqua;
+    
+    margin: 10px 0;
+    width: 50%;
+}
+
+.tribe-block__venue{
+    /* debug */
+    background-color: aqua;
+
+    margin: 10px 0;
+    width: 50%;
 }
