@@ -105,10 +105,6 @@ header #dmc-logo{
     margin: 15px;
 }
 
-.container{
-    
-}
-
 .contents{
     display: flex;
     flex-direction: column;
@@ -176,7 +172,7 @@ footer{
 }
 
 /*Width*/
-.header-inner, .container, .footer-inner{
+.header-inner, .container, .footer-inner, #tribe-events-pg-template{
     max-width: 1200px;
     margin: auto;
 
