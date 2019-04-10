@@ -24,15 +24,6 @@
             <img src="<?php echo get_template_directory_uri(); ?>/p5js/image/web_dmc_header.png" alt="<?php bloginfo("name");?>">
         </div>
         <div class="header-inner">
-            <!-- タイトルを画像にする -->
-            <!-- <div class="site-title">
-                <h1>
-                    <a href="<?php echo home_url(); ?>">
-                        <img src="<?php echo get_template_directory_uri(); ?>/p5js/image/web_dmc_header.jpg" alt="<?php bloginfo("name");?>">
-                    </a>
-                </h1>
-            </div> -->
-
             <!-- スマートフォン用のメニューボタン -->
             <button type="button" id="navbutton">
                 <i class="fas fa-bars"></i>
