@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/events.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/form.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <?php
         wp_head();//プラグイン用
@@ -20,15 +21,6 @@
             <img src="<?php echo get_template_directory_uri(); ?>/p5js/image/web_dmc_header.png" alt="<?php bloginfo("name");?>">
         </div>
         <div class="header-inner">
-            <!-- タイトルを画像にする -->
-            <!-- <div class="site-title">
-                <h1>
-                    <a href="<?php echo home_url(); ?>">
-                        <img src="<?php echo get_template_directory_uri(); ?>/p5js/image/web_dmc_header.jpg" alt="<?php bloginfo("name");?>">
-                    </a>
-                </h1>
-            </div> -->
-
             <!-- スマートフォン用のメニューボタン -->
             <button type="button" id="navbutton">
                 <i class="fas fa-bars"></i>
