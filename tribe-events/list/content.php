@@ -19,10 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 	<?php
-	/**
-	 * Fires before any content is printed inside the list view.
-	 */
-	do_action( 'tribe_events_list_before_the_content' );
+	//タイトルに余計な文字列が入るので削除
+	// do_action( 'tribe_events_list_before_the_content' );
 	?>
 
 	<!-- Notices -->

@@ -45,30 +45,13 @@ $venue_address = tribe_get_address();
 	<?php if ( $venue_details ) : ?>
 		<!-- Venue Display Info -->
 		<div class="tribe-events-venue-details">
-		<?php
-			$address_delimiter = empty( $venue_address ) ? ' ' : ', ';
-
-			// These details are already escaped in various ways earlier in the code.
-			echo implode( $address_delimiter, $venue_details );
-
-			if ( tribe_show_google_map_link() ) {
-				echo tribe_get_map_link_html();
-			}
-		?>
+			<?php
+				echo "<p>".$venue_details['linked_name']."</p>";
+			?>
 		</div> <!-- .tribe-events-venue-details -->
 	<?php endif; ?>
 
 </div><!-- .tribe-events-event-meta -->
-
-<?php if ( tribe_get_cost() ) : ?>
-	<div class="tribe-events-event-cost">
-		<span class="ticket-cost"><?php echo tribe_get_cost( null, true ); ?></span>
-		<?php
-		/** This action is documented in the-events-calendar/src/views/list/single-event.php */
-		do_action( 'tribe_events_inside_cost' )
-		?>
-	</div>
-<?php endif; ?>
 
 <?php do_action( 'tribe_events_after_the_meta' ) ?>
 
