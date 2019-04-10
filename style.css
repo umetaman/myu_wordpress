@@ -6,8 +6,8 @@ Author: umetaman
 Description: DMCオリジナルのWordPressテーマです
 version: β
 */
+
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
-@import "main-widget.css";
 
 body{
     font-family: 'Noto Sans JP', sans-serif, 'メイリオ', 'Meiryo';
@@ -30,7 +30,6 @@ footer{
     margin: 30px;
 }
 
-/*デバッグ*/
 .contents{
     height: 800px;
     width: 100%;
@@ -48,16 +47,6 @@ header #dmc-logo{
 
 .header-inner{
     padding: 0;
-}
-
-/* p5js Animation */
-#p5-canvas{
-    height: fit-content;
-}
-
-#p5-canvas .p5-animation{
-    width: 100%;
-    height: 350px;
 }
 
 /* デスクトップ版ナビゲーション */
