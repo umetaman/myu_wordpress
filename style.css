@@ -274,8 +274,8 @@ footer{
     }
 
     /* PCヘッダー */
-    .header-inner{
-        display: none;
+    #p5-canvas{
+        display: inline;
     }
 
     #header-nav{

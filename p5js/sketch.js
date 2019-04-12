@@ -15,7 +15,7 @@ function setup(){
     createCanvas(windowWidth, windowHeight);
     initProperties();
 
-    agentColor = color(225);
+    agentColor = color(200);
 
     for(var i = 0; i < AGENT_NUM; i++){
         var radius = random(5, 10);
