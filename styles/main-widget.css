@@ -1,0 +1,94 @@
+/* メインウィジェット用 */
+
+#main-infomation{
+    display: flex;
+    filter: drop-shadow(4px 4px 4px rgba(0,0,0,0.35));
+    margin: 40px 0;
+}
+
+.main-widget{
+    /* Debug */
+    background-color: white;
+    
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.main-widget h2{
+    margin: 20px 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* 今後のイベント情報 */
+.tribe-list-widget{
+    list-style: none;
+    padding: 0 15px;
+}
+
+.tribe-list-widget > li{
+    margin: 10px 0;
+    padding: 10px 15px;
+    border: solid 3px #a5e2ff;
+    border-radius: 10px; 
+}
+
+.tribe-event-title{
+    margin-top: 0;
+    margin-bottom: 0.7em; 
+}
+
+.tribe-event-title > a{
+    text-decoration-line: none;
+    color: #000;
+    width: 100%;
+}
+
+#main-infomation p{
+    margin: 10px auto;
+    padding: auto;
+    text-align: center;
+    margin: 35px 0;
+}
+
+#main-infomation p > a{
+    text-decoration-line: none;
+    padding: 10px 20px;
+    background-color: #a5e2ff;
+    border-radius: 5px;
+}
+
+/* 更新情報 */
+.main-widget ul{
+    margin: 30px 0;
+}
+
+.main-widget ul li {
+    list-style: none;
+    margin: 10px;
+}
+
+@media (min-width: 768px){
+    
+}
+
+@media (min-width: 600px){
+    
+}
+
+@media (max-width: 767px){
+    /* メインウィジェット */
+    #main-infomation{
+        flex-direction: column;
+    }
+
+    .main-widget{
+        width: auto;
+    }
+}
+
+@media (max-width: 599px){
+    
+}
