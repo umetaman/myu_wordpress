@@ -44,8 +44,6 @@ MYU Wordpress + The Event Calendar
 
 .myu-single-event-detail-container{
     box-sizing: border-box;
-
-    padding-left: 45px;
 }
 
 h2.current-events-head-title{
@@ -94,6 +92,8 @@ div.myu-single-event > h3.myu-single-event-title > a:hover{
 .myu-single-event img.myu-single-event-thumbnail{
     width: 350px;
     height: auto;
+
+    margin-right: 45px;
 }
 
 /* イベントのCaption */
@@ -129,8 +129,8 @@ a.myu-single-event-read-more:hover{
         flex-direction: column;
     }
     /* 余白なし */
-    .myu-single-event-detail-container{
-        padding-left: 0px;
+    .myu-single-event img.myu-single-event-thumbnail{
+        margin: 0;
     }
     /* サムネイルは横いっぱいに */
     .myu-single-event img.myu-single-event-thumbnail{
