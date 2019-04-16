@@ -33,25 +33,137 @@ MYU Wordpress + The Event Calendar
     width: 50%;
 }
 
+/* month module */
+
+
+/* day module */
+/* 2カラムにする */
+.myu-single-event-infomation-container{
+    display: flex;
+}
+
+.myu-single-event-detail-container{
+    box-sizing: border-box;
+
+    padding-left: 45px;
+}
+
+h2.current-events-head-title{
+    box-sizing: border-box;
+    background-color: #666666;
+    color: #ffffff;
+
+    width: 100%;
+    text-align: center;
+}
+
+div.myu-single-event{
+    background-color: #EEEEEE;
+
+    margin-bottom: 45px;
+    padding: 30px;
+}
+
+/* イベントのタイトル */
+div.myu-single-event > h3.myu-single-event-title{
+    margin: 5px 0;
+}
+
+div.myu-single-event > h3.myu-single-event-title > a{
+    font-size: 22px;
+    color: #000000;
+    transition: 0.2s;
+}
+
+div.myu-single-event > h3.myu-single-event-title > a:hover{
+    color: #777777;
+    transition: 0.2s;
+}
+
+/* イベントの場所 */
+.myu-single-event-venue-details > p{
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.myu-single-event-venue-details > p > .fa-map-marker-alt{
+    padding-right: 10px; 
+}
+
+/* イベントのサムネイル */
+.myu-single-event img.myu-single-event-thumbnail{
+    width: 350px;
+    height: auto;
+}
+
+/* イベントのCaption */
+.myu-single-event-description > p{
+    box-sizing: border-box;
+    margin-bottom: 25px;
+}
+
 /* さらに詳しく */
-a.tribe-events-read-more{
-    background-color: #4d4d4d;
+a.myu-single-event-read-more{
+    box-sizing: border-box;
+
     padding: 7px 20px;
     margin: 20px 0px;
+
+    background-color: #4d4d4d;
     border-radius: 7px;
     color: white;
     border: #4d4d4d 2px solid;
     transition: 0.15s;
 }
 
-a.tribe-events-read-more:hover{
+a.myu-single-event-read-more:hover{
     background-color: white;
     color: #4d4d4d;
     transition: 0.15s;
 }
 
-/* イベントのCaption */
-.tribe-events-list-event-description p{
-    box-sizing: border-box;
-    margin-bottom: 45px;
+/* スマートフォン */
+@media (max-width: 767px){
+    /* 縦並びに */
+    .myu-single-event-infomation-container{
+        flex-direction: column;
+    }
+    /* 余白なし */
+    .myu-single-event-detail-container{
+        padding-left: 0px;
+    }
+    /* サムネイルは横いっぱいに */
+    .myu-single-event img.myu-single-event-thumbnail{
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* ナビゲーション */
+.myu-events-sub-nav{
+    list-style: none;
+    padding: 0;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+/* アイコン */
+.myu-events-nav-previous > a > .fa-arrow-left{
+    padding-right: 15px; 
+}
+
+.myu-events-nav-next > a > .fa-arrow-right{
+    padding-left: 15px; 
+}
+
+ul.myu-events-sub-nav > li > a{
+    font-size: 18px;
+    color: #000000;
+    transition: 0.2s;
+}
+
+ul.myu-events-sub-nav > li > a:hover{
+    color: #777777;
+    transition: 0.2s;
 }
