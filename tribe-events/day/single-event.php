@@ -52,9 +52,10 @@ $venue_address = tribe_get_address();
 		<!-- 場所 -->
 		<div class="myu-single-event-venue-details">
 			<p>
-			<i class="fas fa-map-marker-alt"></i>
 			<?php
+			if($venue_details['linked_name'] != null){
 				echo '<i class="fas fa-map-marker-alt"></i>'.$venue_details['linked_name'];
+			}
 			?>
 			</p>
 		</div>
