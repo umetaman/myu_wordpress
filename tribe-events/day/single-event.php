@@ -81,7 +81,6 @@ $venue_address = tribe_get_address();
 <div class="view-event-detail-btn">
 	<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="myu-single-event-read-more" rel="bookmark">
 		<?php esc_html_e( 'Find out more', 'the-events-calendar' ) ?>
-		<i class="fas fa-chevron-circle-right"></i>
 	</a>
 </div>
 
