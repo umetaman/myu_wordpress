@@ -33,9 +33,6 @@ MYU Wordpress + The Event Calendar
     width: 50%;
 }
 
-/* month module */
-
-
 /* day, list module */
 /* 2カラムにする */
 .myu-single-event-infomation-container{
@@ -169,3 +166,130 @@ ul.myu-events-sub-nav > li > a:hover{
 }
 
 /* イベント単体のページ */
+#myu-events-content img.myu-single-event-thumbnail{
+    box-sizing: border-box;
+
+    width: 100%;
+    height: auto;
+
+    padding-right: 45px;
+}
+
+/* 2カラム */
+.myu-single-event-post{
+    display: flex;
+    flex-direction: row;
+
+    margin-bottom: 25px;
+}
+
+/* アイコンの余白 */
+.myu-single-event-content-container i{
+    margin-right: 15px; 
+}
+
+/* イベントの期間 */
+.myu-events-schedule > h2.myu-events-schedule-datetime{
+    margin: 5px 0;
+}
+
+/* イベントの詳細 */
+.myu-single-event-content-container > p{
+    margin-bottom: 30px;
+}
+
+.myu-block-organizer-container,
+.myu-block-venue,
+.myu-block-event-website{
+    box-sizing: border-box;
+    width: 50%;
+    padding-right: 25px;
+}
+
+/* 
+1emで各項目の頭を下げる。
+*/
+/* 主催者 */
+.myu-block-organizer-container{
+    float: left;
+
+    margin-bottom: 25px;
+}
+
+.myu-block-organizer-title > h3{
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.myu-block-organizer-title > h4{
+    margin: 0;
+    margin-left: 1em;
+}
+
+.myu-block-organizer-container > p{
+    margin: 0;
+    margin-left: 1em;
+}
+
+
+/* 場所 */
+.myu-block-venue{
+    /* width: 50%; */
+    float: left;
+}
+
+.myu-block-venue-title{
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.myu-block-venue-name > p{
+    margin: 0;
+    margin-left: 1em;
+}
+
+/* Webサイト */
+.myu-block-event-website > h3{
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.myu-block-event-website > a{
+    margin-left: 1em;
+}
+
+@media (max-width: 1024px){
+    .myu-events-single-event-title{
+        padding-left: 10px;
+    }
+
+    .myu-single-event-post{
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    #myu-events-content img.myu-single-event-thumbnail{
+        padding: 0;
+    }
+}
+/* スマートフォン */
+@media (max-width: 767px){
+    
+}
+
+/* イベントナビゲーションは消す */
+#myu-events-footer > .myu-events-visuallyhidden{
+    display: none;
+}
+
+/* フッターのセパレーター */
+#myu-events-footer{
+    padding-top: 25px;
+
+    border-top: #999999 solid 1px;
+}
+
+/* ナビゲーションの下線は消す */
+.myu-events-sub-nav a{
+    text-decoration: none;
+}
