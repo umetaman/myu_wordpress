@@ -64,24 +64,26 @@ $venue_address = tribe_get_address();
 
 <?php do_action( 'tribe_events_after_the_meta' ) ?>
 
+<div class="myu-single-event-infomation-container">
 <!-- イベントのサムネイル、正方形を推奨 -->
 <?php
 	echo the_post_thumbnail( null, array("class" => "myu-single-event-thumbnail") );
 ?>
 
-
 <!-- イベントの内容 -->
 <?php do_action( 'tribe_events_before_the_content' ) ?>
+	<div class="myu-single-event-detail-container">
+		<!-- 紹介文 -->
+		<div class="myu-single-event-description">
+			<?php echo tribe_events_get_the_excerpt(); ?>
+		</div>
 
-<!-- 紹介文 -->
-<div class="myu-single-event-description">
-	<?php echo tribe_events_get_the_excerpt(); ?>
-</div>
-
-<div class="view-event-detail-btn">
-	<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="myu-single-event-read-more" rel="bookmark">
-		<?php esc_html_e( 'Find out more', 'the-events-calendar' ) ?>
-	</a>
+		<div class="view-event-detail-btn">
+			<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="myu-single-event-read-more" rel="bookmark">
+				<?php esc_html_e( 'Find out more', 'the-events-calendar' ) ?>
+			</a>
+		</div>
+	</div>
 </div>
 
 <?php
