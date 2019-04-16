@@ -54,7 +54,7 @@ $venue_address = tribe_get_address();
 			<p>
 			<i class="fas fa-map-marker-alt"></i>
 			<?php
-				echo $venue_details['linked_name'];
+				echo '<i class="fas fa-map-marker-alt"></i>'.$venue_details['linked_name'];
 			?>
 			</p>
 		</div>
