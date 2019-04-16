@@ -19,7 +19,8 @@ if ( ! $this->attr( 'href' ) || ! $this->attr( 'urlLabel' ) ) {
 
 $target = apply_filters( 'tribe_get_event_website_link_target', '_self' );
 ?>
-<div class="tribe-block tribe-block__event-website">
+<div class="myu-block myu-block-event-website">
+	<h3 class="myu-block-event-website-title">Webサイト</h3>
 	<a
 		href="<?php echo esc_url( $this->attr( 'href' ) ); ?>"
 		target="<?php echo esc_attr( $target ); ?>"
