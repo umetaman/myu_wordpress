@@ -36,7 +36,7 @@ MYU Wordpress + The Event Calendar
 /* month module */
 
 
-/* day module */
+/* day, list module */
 /* 2カラムにする */
 .myu-single-event-infomation-container{
     display: flex;
@@ -64,7 +64,7 @@ div.myu-single-event{
     padding: 30px;
 }
 
-/* イベントのタイトル */
+/* イベントのタイトル */ 
 div.myu-single-event > h3.myu-single-event-title{
     margin: 5px 0;
 }

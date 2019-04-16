@@ -20,7 +20,7 @@ global $more;
 $more = false;
 ?>
 
-<div class="tribe-events-loop">
+<div id="myu-events-list" class="myu-events-loop">
 
 	<?php while ( have_posts() ) : the_post(); ?>
 		<?php do_action( 'tribe_events_inside_before_loop' ); ?>
@@ -35,7 +35,7 @@ $more = false;
 			$post_parent = ' data-parent-post-id="' . absint( $post->post_parent ) . '"';
 		}
 		?>
-		<div id="post-<?php the_ID() ?>" class="<?php tribe_events_event_classes() ?>" <?php echo $post_parent; ?>>
+		<div id="post-<?php the_ID() ?>" class="myu-single-event" <?php echo $post_parent; ?>>
 			<?php
 			$event_type = tribe( 'tec.featured_events' )->is_featured( $post->ID ) ? 'featured' : 'event';
 
