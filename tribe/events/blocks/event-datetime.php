@@ -63,51 +63,51 @@ $is_same_day      = $formatted_start_date == $formatted_end_date;
 ?>
 
 <?php $event_id = $this->get( 'post_id' ); ?>
-<div class="tribe-events-schedule tribe-clearfix">
-	<h2 class="tribe-events-schedule__datetime">
-		<span class="tribe-events-schedule__date tribe-events-schedule__date--start">
+<div class="myu-events-schedule">
+	<h2 class="myu-events-schedule-datetime">
+		<span class="myu-events-schedule-date myu-events-schedule-date-start">
 			<?php echo $formatted_start_date; ?>
 		</span>
 
 		<?php if ( ! $is_all_day ) : ?>
-			<span class="tribe-events-schedule__separator tribe-events-schedule__separator--date">
+			<span class="myu-events-schedule-separator myu-events-schedule-separator-date">
 				<?php echo $separator_date; ?>
 			</span>
-			<span class="tribe-events-schedule__time tribe-events-schedule__time--start">
+			<span class="myu-events-schedule-time myu-events-schedule-time-start">
 				<?php echo $formatted_start_time; ?>
 			</span>
 		<?php elseif ( $is_same_day ) : ?>
-			<span class="tribe-events-schedule__all-day"><?php echo __( 'All day', 'the-events-calendar' ); ?></span>
+			<span class="myu-events-schedule-all-day"><?php echo __( 'All day', 'the-events-calendar' ); ?></span>
 		<?php endif; ?>
 
 		<?php if ( ! $is_all_day || ! $is_same_day ) : ?>
-			<span class="tribe-events-schedule__separator tribe-events-schedule__separator--time">
+			<span class="myu-events-schedule-separator myu-events-schedule-separator-time">
 				<?php echo $separator_time; ?>
 			</span>
 		<?php endif; ?>
 
 		<?php if ( ! $is_same_day ) : ?>
-			<span class="tribe-events-schedule__date tribe-events-schedule__date--end">
+			<span class="myu-events-schedule-date myu-events-schedule-date-end">
 				<?php echo $formatted_end_date; ?>
 			</span>
 
 			<?php if ( ! $is_all_day ) : ?>
-				<span class="tribe-events-schedule__separator tribe-events-schedule__separator--date">
+				<span class="myu-events-schedule-separator myu-events-schedule-separator-date">
 					<?php echo $separator_date; ?>
 				</span>
-				<span class="tribe-events-schedule__time tribe-events-schedule__time--end">
+				<span class="myu-events-schedule-time myu-events-schedule-time-end">
 					<?php echo $formatted_end_time; ?>
 				</span>
 			<?php endif; ?>
 
 		<?php elseif ( ! $is_all_day ) : ?>
-			<span class="tribe-events-schedule__time tribe-events-schedule__time--end">
+			<span class="myu-events-schedule-time myu-events-schedule-time-end">
 				<?php echo $formatted_end_time; ?>
 			</span>
 		<?php endif; ?>
 
 		<?php if ( $show_time_zone ) : ?>
-			<span class="tribe-events-schedule__timezone"><?php echo esc_html( $time_zone_label ); ?></span>
+			<span class="myu-events-schedule-timezone"><?php echo esc_html( $time_zone_label ); ?></span>
 		<?php endif; ?>
 	</h2>
 </div>
