@@ -22,7 +22,7 @@ $current_timeslot = null;
 
 ?>
 
-<div id="tribe-events-day" class="tribe-events-loop">
+<div id="myu-events-day" class="myu-events-loop">
 	<div class="tribe-events-day-time-slot">
 
 	<?php while ( have_posts() ) : the_post(); ?>
@@ -33,12 +33,12 @@ $current_timeslot = null;
 	</div>
 	<!-- .tribe-events-day-time-slot -->
 
-	<div class="tribe-events-day-time-slot">
-		<h2 class="tribe-events-day-time-slot-heading"><?php echo $current_timeslot; ?></h2>
+	<div class="myu-events-day-time-slot">
+		<h2 class="current-events-head-title">開催中のイベント</h2>
 		<?php endif; ?>
 
 		<!-- Event  -->
-		<div id="post-<?php the_ID() ?>" class="<?php tribe_events_event_classes() ?>">
+		<div id="post-<?php the_ID() ?>" class="myu-single-event">
 			<?php
 			$event_type = tribe( 'tec.featured_events' )->is_featured( $post->ID ) ? 'featured' : 'event';
 

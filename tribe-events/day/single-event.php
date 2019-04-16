@@ -7,6 +7,8 @@
  *
  * @version 4.6.19
  *
+ * 
+ * loop.phpで表示されるイベントのモジュール
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,45 +26,63 @@ $has_venue_address = ( ! empty( $venue_details['address'] ) ) ? ' location' : ''
 $venue_address = tribe_get_address();
 ?>
 
-<!-- Event Title -->
+<!-- イベントのタイトル -->
 <?php do_action( 'tribe_events_before_the_event_title' ) ?>
-<h3 class="tribe-events-list-event-title summary">
+<h3 class="myu-single-event-title">
+	<!-- イベントのタイトルはリンク付きとする -->
 	<a class="url" href="<?php echo esc_url( tribe_get_event_link() ); ?>" title="<?php the_title_attribute() ?>" rel="bookmark">
 		<?php the_title() ?>
 	</a>
 </h3>
+
 <?php do_action( 'tribe_events_after_the_event_title' ) ?>
 
-<!-- Event Meta -->
+<!-- イベントの時刻と場所 -->
 <?php do_action( 'tribe_events_before_the_meta' ) ?>
-<div class="tribe-events-event-meta <?php echo esc_attr( $has_venue . $has_venue_address ); ?>">
+<div class="myu-single-event-meta <?php echo esc_attr( $has_venue . $has_venue_address ); ?>">
 
-	<!-- Schedule & Recurrence Details -->
-	<div class="tribe-updated published time-details">
+	<!-- 時刻 -->
+	<div class="myu-single-event-time-details">
 		<?php echo tribe_events_event_schedule_details(); ?>
 	</div>
 
-	<?php if ( $venue_details ) : ?>
-		<!-- Venue Display Info -->
-		<div class="tribe-events-venue-details">
+	<?php 
+	// 場所は設定されていたら表示する
+	if ( $venue_details ) : ?>
+		<!-- 場所 -->
+		<div class="myu-single-event-venue-details">
+			<p>
+			<i class="fas fa-map-marker-alt"></i>
 			<?php
-				echo "<p>".$venue_details['linked_name']."</p>";
+				echo $venue_details['linked_name'];
 			?>
-		</div> <!-- .tribe-events-venue-details -->
+			</p>
+		</div>
 	<?php endif; ?>
-
-</div><!-- .tribe-events-event-meta -->
+</div>
 
 <?php do_action( 'tribe_events_after_the_meta' ) ?>
 
-<!-- Event Image -->
-<?php echo tribe_event_featured_image( null, 'medium' ); ?>
+<!-- イベントのサムネイル、正方形を推奨 -->
+<?php
+	echo the_post_thumbnail( null, array("class" => "myu-single-event-thumbnail") );
+?>
 
-<!-- Event Content -->
+
+<!-- イベントの内容 -->
 <?php do_action( 'tribe_events_before_the_content' ) ?>
-<div class="tribe-events-list-event-description tribe-events-content description entry-summary">
+
+<!-- 紹介文 -->
+<div class="myu-single-event-description">
 	<?php echo tribe_events_get_the_excerpt(); ?>
-	<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="tribe-events-read-more" rel="bookmark"><?php esc_html_e( 'Find out more', 'the-events-calendar' ) ?><i class="fas fa-chevron-circle-right"></i></a>
-</div><!-- .tribe-events-list-event-description -->
+</div>
+
+<div class="view-event-detail-btn">
+	<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="myu-single-event-read-more" rel="bookmark">
+		<?php esc_html_e( 'Find out more', 'the-events-calendar' ) ?>
+		<i class="fas fa-chevron-circle-right"></i>
+	</a>
+</div>
+
 <?php
 do_action( 'tribe_events_after_the_content' );
