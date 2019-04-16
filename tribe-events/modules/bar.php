@@ -67,11 +67,11 @@ if ( count( $views ) > 1 ) {
 						<?php endforeach; ?>
 						<div class="tribe-bar-submit">
 							<input
-								class="tribe-events-button tribe-no-param"
+								class="tribe-events-button tribe-no-param fas"
 								type="submit"
 								name="submit-bar"
 								aria-label="<?php printf( esc_attr__( 'Submit %s search', 'the-events-calendar' ), tribe_get_event_label_plural() ); ?>"
-								value="<?php printf( esc_attr__( 'Find %s', 'the-events-calendar' ), tribe_get_event_label_plural() ); ?>"
+								value="<?php echo '&#xf002;'."イベントを検索" ?>"
 							/>
 						</div>
 					</div>
