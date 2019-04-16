@@ -65,10 +65,12 @@ $venue_address = tribe_get_address();
 <?php do_action( 'tribe_events_after_the_meta' ) ?>
 
 <div class="myu-single-event-infomation-container">
-<!-- イベントのサムネイル、正方形を推奨 -->
-<?php
-	echo the_post_thumbnail( null, array("class" => "myu-single-event-thumbnail") );
-?>
+	<!-- イベントのサムネイル、正方形を推奨 -->
+	<div class="myu-single-event-thumbnail-flex-wrapper">
+		<?php
+			echo the_post_thumbnail( null, array("class" => "myu-single-event-thumbnail") );
+		?>
+	</div>
 
 <!-- イベントの内容 -->
 <?php do_action( 'tribe_events_before_the_content' ) ?>
