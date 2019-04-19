@@ -36,7 +36,7 @@
                     <!-- 日付 -->
                     <p class="myu-post-archive-date"><?php the_date(); ?></p>
                     <!-- カテゴリ -->
-                    <p class="myu-post-archive-category"><?php the_category(', '); ?></p>
+                    <p class="myu-post-archive-category"><i class="fas fa-folder-open"></i><?php the_category(', '); ?></p>
                     <!-- サムネ画像。持っていたら表示、持っていなかったらNoImage -->
                     <p class="myu-post-archive-excerpt"><?php the_excerpt(); ?></p>
                 </div>
