@@ -19,13 +19,6 @@
     
         <li>
             <div class="myu-post-archive-wrapper">
-                <!-- 記事のタイトル -->
-                <h2><?php the_title(); ?></h2>
-                <!-- 日付 -->
-                <p><?php the_date(); ?></p>
-                <!-- カテゴリ -->
-                <p><?php the_category(', '); ?></p>
-                <!-- サムネ画像。持っていたら表示、持っていなかったらNoImage -->
                 <?php
                 //サムネ画像が設定されていないとき、NoImageの画像に置き換える。
                 $thumbnail_url = get_template_directory_uri().'/images/no_image.jpg';
@@ -33,9 +26,21 @@
                     $thumbnail_url = get_the_post_thumbnail_url();
                 }
                 ?>
-                <img src="<?php echo $thumbnail_url; ?>" alt="<?php echo the_title(); ?>">
-                <p><?php the_excerpt(); ?></p>
-                <a href="<?php the_permalink(); ?>"></a>
+                <!-- 記事のサムネイル -->
+                <div class="myu-post-archive-thumbnail-wrapper">
+                    <img class="myu-post-archive-thumbnail" src="<?php echo $thumbnail_url; ?>" alt="<?php echo the_title(); ?>">
+                </div>
+                <!-- 記事のタイトル -->
+                <div class="myu-post-archive-info-wrapper">
+                    <h2 class="myu-post-archive-title"><?php the_title(); ?></h2>
+                    <!-- 日付 -->
+                    <p class="myu-post-archive-date"><?php the_date(); ?></p>
+                    <!-- カテゴリ -->
+                    <p class="myu-post-archive-category"><?php the_category(', '); ?></p>
+                    <!-- サムネ画像。持っていたら表示、持っていなかったらNoImage -->
+                    <p class="myu-post-archive-excerpt"><?php the_excerpt(); ?></p>
+                </div>
+                <a class="myu-post-archive-link" href="<?php the_permalink(); ?>"></a>
             </div>
         </li>
 
