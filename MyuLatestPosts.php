@@ -47,7 +47,7 @@ class MyuLatestPosts extends WP_Widget{
                     <!-- 日付 -->
                     <p class="myu-latest-post-date"><?php the_date(); ?></p>
                     <!-- カテゴリ -->
-                    <p class="myu-latest-post-category"><?php the_category(', '); ?></p>
+                    <p class="myu-latest-post-category"><i class="fas fa-folder-open"></i><?php the_category(', '); ?></p>
                 </div>
                 <a href="<?php the_permalink(); ?>"></a>
             </div>
