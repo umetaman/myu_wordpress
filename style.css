@@ -156,7 +156,7 @@ footer{
 
 .copyright p {
     font-size: 0.9em;
-    margin: 0;
+    margin: 20px 0;
     text-align: center;
 }
 
@@ -421,4 +421,18 @@ footer{
 .post-image img{
     width: 100%;
     height: auto;
+}
+
+/* ボタンの共通スタイル */
+.myu-btn, .wp-block-button__link{
+    box-shadow: 0 0.09rem 0.18rem rgba(0,0,0,0.1),
+    0 0.3rem 0.9rem rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.myu-btn:hover, .wp-block-button__link:hover{
+    box-shadow: 0 0.18rem 0.36rem rgba(0,0,0,0.1),
+    0 0.6rem 1.8rem rgba(0,0,0,0.1);
+
+    transition: 0.3s;
 }
