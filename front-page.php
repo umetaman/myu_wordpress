@@ -1,17 +1,11 @@
 <?php
     get_header();
-
-    //3つまで最新の記事を取得する
-    // $posts = get_posts(array('posts_per_page' => 3));
 ?>
-
-
 
 <div class="container">
     <?php
     get_sidebar();
     dynamic_sidebar("myu-main-widgets");
-    wp_reset_postdata();
     ?>
     <div class="contents">
         <div class="post-content">
