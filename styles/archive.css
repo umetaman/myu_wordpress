@@ -48,6 +48,11 @@ ul#myu-post-archives{
     position: relative;
     z-index: 3;
 }
+
+/* アイコンの余白 */
+.myu-post-archive-category > i{
+    margin-right: 15px;
+}
  
 /* flexで2column */
 .myu-post-archive-wrapper{
@@ -111,5 +116,9 @@ h2.myu-post-archive-title{
 
     .myu-post-archive-info-wrapper{
         margin: 0 10px;
+    }
+
+    .myu-post-archive-thumbnail-wrapper{
+        margin-right: 0px;
     }
 }
