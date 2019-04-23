@@ -1,6 +1,9 @@
 /* 
 MYU Latest Posts
 */
+h2#myu-latest-posts-title{
+    text-align: center;
+}
 
 .myu-latest-posts-wrapper{
     display: flex;
@@ -47,7 +50,7 @@ li .myu-latest-post-link{
 
 /* 記事のタイトル */
 h3.myu-latest-post-title{
-    margin: 5px 0;
+    margin: 8px 0;
 }
 
 /* 日時 */
@@ -70,4 +73,15 @@ h3.myu-latest-post-title{
         width: 100%;
         height: auto;
     }
+}
+
+/* すべての記事を見る */
+#myu-latest-posts > #widget-link-btn{
+    display: block;
+    margin: 0 auto;
+    padding: 14px 20px;
+    width: 200px;
+    text-align: center;
+    background-color: #4d4d4d;
+    color: #ffffff;
 }
