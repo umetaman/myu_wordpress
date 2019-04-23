@@ -7,7 +7,7 @@
     get_sidebar();
     dynamic_sidebar("myu-main-widgets");
     ?>
-    <div class="contents">
+    <div class="contents">  
         <div class="post-content">
         <?php
         the_content();
