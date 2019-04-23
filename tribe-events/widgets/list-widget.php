@@ -33,7 +33,7 @@ $posts = tribe_get_list_widget_events();
 // Check if any event posts are found.
 if ( $posts ) : ?>
 
-	<ol class="myu-list-widget">
+	<ul class="myu-list-widget">
 		<?php
 		// Setup the post data for each event.
 		foreach ( $posts as $post ) :
@@ -41,39 +41,40 @@ if ( $posts ) : ?>
 			?>
 			<li class="myu-events-list-widget-events <?php tribe_events_event_classes() ?>">
 				<?php
-				// イベントの加増があるかどうかを判断する
-				?>
-					<div class="myu-event-image">
-						<?php
-						// イベントの画像を取得する
-						?>
-					</div>
-					<?php
+				// イベントの画像があるかどうかを判断する
+				$thumbnail_url = get_template_directory_uri().'/images/no_image.jpg';
+				if(has_post_thumbnail()){
+					$thumbnail_url = get_the_post_thumbnail_url();
 				}
 				?>
-
-				<?php do_action( 'tribe_events_list_widget_before_the_event_title' ); ?>
-				<!-- イベントのタイトル -->
-				<h3 class="myu-event-title">
-					<?php the_title(); ?>
-				</h3>
-				
-				<?php do_action( 'tribe_events_list_widget_after_the_event_title' ); ?>
-				<!-- イベントの期間 -->
-				<?php do_action( 'tribe_events_list_widget_before_the_meta' ) ?>
-				<div class="myu-event-duration">
-					<?php echo tribe_events_event_schedule_details(); ?>
+				<div class="myu-event-thumbnail-wrapper">
+					<img src="<?php echo $thumbnail_url; ?>" alt="<?php echo the_title(); ?>">
 				</div>
-				<?php do_action( 'tribe_events_list_widget_after_the_meta' ) ?>
+
+				<div class="myu-event-info-wrapper">
+					<?php do_action( 'tribe_events_list_widget_before_the_event_title' ); ?>
+					<!-- イベントのタイトル -->
+					<h3 class="myu-event-title">
+						<?php the_title(); ?>
+					</h3>
+					
+					<?php do_action( 'tribe_events_list_widget_after_the_event_title' ); ?>
+					<!-- イベントの期間 -->
+					<?php do_action( 'tribe_events_list_widget_before_the_meta' ) ?>
+					<div class="myu-event-duration">
+						<p><i class="far fa-calendar"></i><?php echo tribe_events_event_schedule_details(); ?></p>
+					</div>
+					<?php do_action( 'tribe_events_list_widget_after_the_meta' ) ?>
+				</div>
 				<a class="myu-event-widget-link" href="<?php echo esc_url( tribe_get_event_link() ); ?>"></a>
 			</li>
 		<?php
 		endforeach;
 		?>
-	</ol><!-- .tribe-list-widget -->
+	</ul>
 
 	<p class="myu-events-widget-link">
-		<a href="<?php echo esc_url( tribe_get_events_link() ); ?>" rel="bookmark"><?php printf( esc_html__( 'View All %s', 'the-events-calendar' ), $events_label_plural ); ?></a>
+		<a id="widget-events-link-btn" class="myu-btn" href="<?php echo esc_url( tribe_get_events_link() ); ?>" rel="bookmark"><?php printf( esc_html__( 'View All %s', 'the-events-calendar' ), $events_label_plural ); ?></a>
 	</p>
 
 <?php

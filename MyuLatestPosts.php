@@ -57,7 +57,7 @@ class MyuLatestPosts extends WP_Widget{
             wp_reset_postdata();
             ?>
             </ul>
-            <a id="widget-link-btn" class="myu-btn" href="<?php echo $archive_link; ?>">すべての記事を見る</a>
+            <a id="widget-archives-link-btn" class="myu-btn" href="<?php echo $archive_link; ?>">すべての記事を見る</a>
         </div>
         <?php
     }
