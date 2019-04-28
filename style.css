@@ -22,6 +22,14 @@ h1, h2, h3, h4, h5, h6{
     font-weight: bold;
 }
 
+#navbutton{
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+    border-radius: 12px;
+    border: 2px solid #333333;
+}
+
 footer{
     color: #999999;
 }
@@ -49,64 +57,58 @@ header #dmc-logo{
     padding: 0;
 }
 
-/* デスクトップ版ナビゲーション */
-#header-nav{
-    width: 100%;
-    background-color: #eee;
-    overflow: hidden;
-}
+/* 
+デスクトップ版ナビゲーション
+ */
 
-#header-nav ul{
-    width: 100%;
-    list-style-type: none;
+.header-nav-wrapper{
     display: flex;
-    justify-content: center;
+    background-color: rgba(200,200,200,1);
+    /* background-color: rgba(160,160,160,0.5); */
+    height: 65px;
 }
 
-#header-nav li{
-    text-align: center;
-    margin: 0 15px;
-}
-
-#header-nav li a{
-    text-decoration: none;
-    color: #444;
-    font-weight: bold;
-    padding: 10px 20px;
-    font-size: 1.2em;
-}
-
-#header-nav li a:hover{
-    background-color: #ddd;
-    transition: 0.2s;
-}
-
+/* ulの余白なし */
 ul#menu-header{
     padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+}
+
+ul#menu-header > li > a{
+    padding: 5px 15px;
+    text-decoration: none;
+    color: #333333;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 横幅を定義 */
+nav#header-nav{
+    width: 100%;
+}
+
+/* Stickyのときのみ表示 */
+#header-logo-wrapper > a > img{
+    display: none;
+    height: 55px;
+    width: auto;
+    margin: 5px 0;
+    padding-left: 95px;
 }
 
 /* Stickyヘッダー */
-nav#header-nav.sticky-header{
+.header-nav-wrapper.sticky-header{
     position: fixed;
+    width: 100%;
     top: 0;
     left: 0;
     z-index: 2;
-    transition: 0.2s;
+    transition: 0.5s;
     box-shadow: 0 0.03rem 0.06rem rgba(0,0,0,0.1), 0 0.1rem 0.3rem rgba(0,0,0,0.1);
-}
-
-/* 記述場所は違うが、main-widget.cssに書いても適用されない */
-#main-infomation{
-    filter: drop-shadow(4px 4px 4px rgba(0,0,0,0.35));
-    margin: 40px 0;
-}
-
-#main-infomation .main-widget{
-    border-radius: 10px;
-    border: 1px solid #eee;
-    padding: 10px;
-    margin: 15px;
-}
+} 
 
 .contents{
     display: flex;
@@ -222,35 +224,10 @@ footer{
 }
 
 /* スマートフォン対応 */
+
 /* メニューボタン */
 .header-inner{
     position: relative;
-}
-
-#navbutton{
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    padding: 8px 12px;
-    cursor: pointer;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    border: solid 1px #aaa;
-    border-radius: 5px;
-    background-color: #fff;
-}
-
-#navbutton:hover{
-    background-color: #ddd;
-}
-
-#navbutton:focus{
-    outline: none;
-}
-
-#navbutton i {
-    font-size: 2em;
-    color: #333;
 }
 
 /* エクスポートボタンは無効 */
@@ -292,32 +269,6 @@ footer{
         display: inline;
     }
 
-    #header-nav{
-        display: block;
-    }
-    .header-nav{
-        /* max-width: 1200px; */
-        margin: 0 auto;
-        padding: 0 10px;
-        box-sizing: border-box;
-        text-align: center;
-    }
-    .header-nav ul:after{
-        display: block;
-        clear: both;
-        content: "";
-    }
-    .header-nav li{
-        display: inline-block;
-        width: auto;
-    }
-    .header-nav li a{
-        font-size: 1.1em;
-        padding: 5px 10px;
-    }
-    #navbutton{
-        display: none;
-    }
 }
 
 @media (min-width: 600px){
@@ -326,6 +277,9 @@ footer{
     }
 }
 
+/*
+ スマートフォン版
+ */
 @media (max-width: 767px){
     #p5-canvas{
         display: none;
@@ -333,60 +287,6 @@ footer{
 
     header #dmc-logo{
         display: inherit;
-    }
-
-    /*スマホ用 ヘッダーナビゲーション */
-    #header-nav{
-        display: none;
-    }
-
-    .header-nav{
-        padding-left: 10px;
-    }
-
-    .header-nav #menu-header{
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        display: inline;
-    }
-
-    .header-nav #menu-header > li{
-        text-align: left;
-    }
-
-    .header-nav li a:before{
-        content: "\f0da";
-        font-family: "Font Awesome 5 Free";
-        color: #555;
-        font-size: 0.9em;
-        padding-right: 3px;
-    }
-
-    .header-nav li a{
-        display: block;
-        padding: 15px 5px;
-        color: #000;
-        font-weight: bold;
-        font-size: 1em;
-        text-decoration: none;
-    }
-
-    .header-nav li a:hover{
-        opacity: 0.8;
-    }
-
-    ul {
-        padding-left: 20px;
-    }
-
-    /* メインウィジェット */
-    #main-infomation{
-        flex-direction: column;
-    }
-
-    .main-widget{
-        width: auto;
     }
 
     .wp-block-columns > .wp-block-column{

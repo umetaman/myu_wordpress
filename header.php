@@ -23,13 +23,14 @@
         <div id="dmc-logo">
             <img src="<?php echo get_template_directory_uri(); ?>/p5js/image/web_dmc_header.png" alt="<?php bloginfo("name");?>">
         </div>
-        <div class="header-inner">
-            <!-- スマートフォン用のメニューボタン -->
-            <button type="button" id="navbutton">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
+
         <!-- ヘッダー -->
+        <div class="header-nav-wrapper">
+            <div id="header-logo-wrapper">
+                <a href="<?php echo site_url(); ?>">
+                    <img src="<?php echo get_template_directory_uri()."/images/dmc_logo.png"; ?>" alt="">
+                </a>
+            </div>
         <?php
             wp_nav_menu(
                 array(
@@ -41,6 +42,11 @@
                 )
             );
         ?>
+        <!-- スマートフォン用のメニューボタン -->
+        <button type="button" id="navbutton">
+            <i class="fas fa-bars"></i>
+        </button>
+        </div>
     </header>
 </body>
 </html>
