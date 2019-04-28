@@ -27,6 +27,16 @@
         );
     }
     add_action("wp_enqueue_scripts", "navbutton_scripts");
+
+    //Stickyヘッダー
+    function sticky_scripts(){
+        wp_enqueue_script(
+            "sticky_script",
+            get_template_directory_uri()."/js/sticky.js",
+            array("jquery")
+        );
+    }
+    add_action("wp_enqueue_scripts", "sticky_scripts");
     
     function myu_widgets_init() {
 
