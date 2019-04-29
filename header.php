@@ -47,6 +47,24 @@
             <i class="fas fa-bars"></i>
         </button>
         </div>
+
+        <!-- スマホ版ホバーナビゲーション -->
+        <div class="header-hover-nav-wrapper">
+            <button id="hover-nav-cancel-button">
+                <i class="fas fa-times"></i>
+        </button>
+            <?php
+            wp_nav_menu(
+                array(
+                    "theme_location" => "header-nav",
+                    "container" => "nav",
+                    "container_class" => "header-hover-nav",
+                    "container_id" => "header-hover-nav",
+                    "fallback_cb" => ""
+                )
+            );
+            ?>
+        </div>
     </header>
 </body>
 </html>

@@ -1,7 +1,19 @@
 jQuery(
     function(){
         jQuery(window).scroll(function(){
-            if(jQuery(this).scrollTop() > 378){
+            var height = 0;
+            var p5Canvas = jQuery("#p5-canvas");
+            var logoImage = jQuery("#dmc-logo");
+
+            if(p5Canvas.css("display") == "none"){
+                height = p5Canvas.height();
+            }else{
+                height = logoImage.height();
+            }
+
+            console.log(height);
+
+            if(jQuery(this).scrollTop() > height){
                 displayStickyHeader();
             }else{
                 hideStickyHeader();
