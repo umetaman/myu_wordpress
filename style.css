@@ -196,6 +196,7 @@ nav#header-hover-nav{
 
 /* フッター */
 footer{
+    display: block;
     color: #999999;
     background-color: #ddd;
 }
@@ -314,6 +315,12 @@ footer{
 
 
 @media (min-width: 768px){
+
+    .container:after{
+        display: block;
+        clear: both;
+        content: '';
+    }
 
     .contents{
         float: left;
