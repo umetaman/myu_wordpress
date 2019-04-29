@@ -101,7 +101,7 @@ nav#header-nav{
     height: 55px;
     width: auto;
     margin: 5px 0;
-    padding-left: 75px;
+    padding-left: 30%;
 }
 
 /* Stickyヘッダー */
@@ -364,7 +364,7 @@ footer{
 
     /* ロゴはスマホ版では左寄り */
     #header-logo-wrapper > a > img{
-        padding-left: 45px;
+        padding-left: 10%;
     }
 
     .header-nav-wrapper{
