@@ -1,11 +1,90 @@
 <?php
 class SlackBotData{
 
-    public $channel = "#問い合わせ"
-    public $username = "Data&MediaCommons"
-    public $icon_image_url = get_template_directory_uri()."/images/"
+    private $channel = "#問い合わせ";
+    private $username = "Data&MediaCommons";
+    private $icon_image_url = get_template_directory_uri()."/images/dmc_icon.jpg";
+    private $post_message = "";
+    private $url = "";
+
+    public function __construct($url = "", $message){
+        $this->set_url($url);
+        $this->set_message($message);
+    }
+
+    public function set_url($url){
+        $this->url = $url;
+    }
+
+    public function set_message($message){
+        $this->post_message = $message;
+    }
+
+    public function get_post_data(){
+
+        $payload = array(
+            "payload" => json_encode(array(
+                "channel" => $this->channel,
+                "username" => $this->username,
+                "icon_image" => $this->icon_image_url,
+                "text" => $this->post_message
+            ))
+        );
+
+        return array(
+            "url" => $this->url;
+            "body" => $payload;
+        );
+
+    }
 
 }
+
+class SlackBot{
+
+    //curlのオプションの設定
+    protected function create_option($info){
+        
+        return array(
+            CURL_URL => $info["url"],
+            CURL_POST => true,
+            CURL_POSTFIELDS => $info["body"],
+            CURL_RETURNTRANSFER => true,
+            CURL_HEADER => true
+        );
+
+    }
+
+    protected function request($options){
+        
+        $ch = curl_init();
+
+        //curlのオプションの設定
+        curl_setopt_array($ch, $options);
+        // curlの実行結果
+        $result = curl_exec($ch);
+        
+        $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+        $header = substr($result, 0, $header_size);
+        $result = substr($result, $header_size);
+
+        curl_close($ch);
+
+        return array(
+            "Header" => $header,
+            "Result" => $result
+        );
+    }
+
+    public function post_message($info){
+        
+        $option = $this->create_option($info->get_post_data());
+        
+        return $this->request($option); 
+    }
+}
+
+
 ?>
 
 <?php
