@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/styles/archive.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/styles/main-widget.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="apple-touch-icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/images/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/images/favicons/icon-192x192.png">
     <?php
         wp_head();//プラグイン用
     ?>
