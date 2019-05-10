@@ -1,93 +1,4 @@
 <?php
-class SlackBotData{
-
-    private $channel = "#問い合わせ";
-    private $username = "Data&MediaCommons";
-    private $icon_image_url = get_template_directory_uri()."/images/dmc_icon.jpg";
-    private $post_message = "";
-    private $url = "";
-
-    public function __construct($url = "", $message){
-        $this->set_url($url);
-        $this->set_message($message);
-    }
-
-    public function set_url($url){
-        $this->url = $url;
-    }
-
-    public function set_message($message){
-        $this->post_message = $message;
-    }
-
-    public function get_post_data(){
-
-        $payload = array(
-            "payload" => json_encode(array(
-                "channel" => $this->channel,
-                "username" => $this->username,
-                "icon_image" => $this->icon_image_url,
-                "text" => $this->post_message
-            ))
-        );
-
-        return array(
-            "url" => $this->url;
-            "body" => $payload;
-        );
-
-    }
-
-}
-
-class SlackBot{
-
-    //curlのオプションの設定
-    protected function create_option($info){
-        
-        return array(
-            CURL_URL => $info["url"],
-            CURL_POST => true,
-            CURL_POSTFIELDS => $info["body"],
-            CURL_RETURNTRANSFER => true,
-            CURL_HEADER => true
-        );
-
-    }
-
-    protected function request($options){
-        
-        $ch = curl_init();
-
-        //curlのオプションの設定
-        curl_setopt_array($ch, $options);
-        // curlの実行結果
-        $result = curl_exec($ch);
-        
-        $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
-        $header = substr($result, 0, $header_size);
-        $result = substr($result, $header_size);
-
-        curl_close($ch);
-
-        return array(
-            "Header" => $header,
-            "Result" => $result
-        );
-    }
-
-    public function post_message($info){
-        
-        $option = $this->create_option($info->get_post_data());
-        
-        return $this->request($option); 
-    }
-}
-
-
-?>
-
-<?php
     //テーマについて
     add_theme_support("title-tag");
     //HTML5対応
@@ -133,10 +44,15 @@ class SlackBot{
     依存プラグイン -> ContactForm7
     */
     function send_to_slack($cf7){
+        $post_data = new SlackBotData("https://hooks.slack.com/services/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", "PHPから送ってます。");
+        //$post_data->set_icon_image_url(get_template_directory_uri()."/images/dmc_icon.jpg");
+        $slack_bot = new SlackBot();
+        $slack_bot->post_message($post_data);
+
         
     }
     
-    add_action("wpcf7_after_send_mail", "send_to_slack");
+    add_action("wpcf7_before_send_mail", "send_to_slack");
 
 
     /*
