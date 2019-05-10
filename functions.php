@@ -1,4 +1,14 @@
 <?php
+class SlackBotData{
+
+    public $channel = "#問い合わせ"
+    public $username = "Data&MediaCommons"
+    public $icon_image_url = get_template_directory_uri()."/images/"
+
+}
+?>
+
+<?php
     //テーマについて
     add_theme_support("title-tag");
     //HTML5対応
@@ -38,6 +48,17 @@
         ));
     }
     add_action( 'widgets_init', 'myu_widgets_init' );
+
+    /*
+    フォームの内容をSlackへ送信する
+    依存プラグイン -> ContactForm7
+    */
+    function send_to_slack($cf7){
+        
+    }
+    
+    add_action("wpcf7_after_send_mail", "send_to_slack");
+
 
     /*
     MYU Latest Post
