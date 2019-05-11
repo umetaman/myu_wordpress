@@ -1,4 +1,6 @@
 <?php
+    require "SlackBot.php";
+
     //テーマについて
     add_theme_support("title-tag");
     //HTML5対応
@@ -44,12 +46,17 @@
     依存プラグイン -> ContactForm7
     */
     function send_to_slack($cf7){
-        $post_data = new SlackBotData("https://hooks.slack.com/services/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", "PHPから送ってます。");
-        //$post_data->set_icon_image_url(get_template_directory_uri()."/images/dmc_icon.jpg");
-        $slack_bot = new SlackBot();
-        $slack_bot->post_message($post_data);
+        $slack = new SlackBot(
+            "https://hooks.slack.com/services/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", ""
+        );
 
+
+        $slack->set_message("送信テストです");
+        $slack->set_channel("#問い合わせ");
+
+        $slack->send_message();
         
+        return 0;
     }
     
     add_action("wpcf7_before_send_mail", "send_to_slack");
