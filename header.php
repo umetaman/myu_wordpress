@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/styles/form.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/styles/p5js.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/styles/archive.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/styles/main-widget.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/styles/widgets.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="apple-touch-icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/images/favicons/apple-touch-icon-180x180.png">
     <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/images/favicons/icon-192x192.png">
@@ -25,13 +25,14 @@
         <div id="dmc-logo">
             <img src="<?php echo get_template_directory_uri(); ?>/p5js/image/web_dmc_header.png" alt="<?php bloginfo("name");?>">
         </div>
-        <div class="header-inner">
-            <!-- スマートフォン用のメニューボタン -->
-            <button type="button" id="navbutton">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
+
         <!-- ヘッダー -->
+        <div class="header-nav-wrapper">
+            <div id="header-logo-wrapper">
+                <a href="<?php echo site_url(); ?>">
+                    <img src="<?php echo get_template_directory_uri()."/images/dmc_logo.png"; ?>" alt="">
+                </a>
+            </div>
         <?php
             wp_nav_menu(
                 array(
@@ -43,6 +44,29 @@
                 )
             );
         ?>
+        <!-- スマートフォン用のメニューボタン -->
+        <button type="button" id="navbutton">
+            <i class="fas fa-bars"></i>
+        </button>
+        </div>
+
+        <!-- スマホ版ホバーナビゲーション -->
+        <div class="header-hover-nav-wrapper">
+            <button id="hover-nav-cancel-button">
+                <i class="fas fa-times"></i>
+        </button>
+            <?php
+            wp_nav_menu(
+                array(
+                    "theme_location" => "header-nav",
+                    "container" => "nav",
+                    "container_class" => "header-hover-nav",
+                    "container_id" => "header-hover-nav",
+                    "fallback_cb" => ""
+                )
+            );
+            ?>
+        </div>
     </header>
 </body>
 </html>

@@ -36,13 +36,8 @@
                     <!-- 日付 -->
                     <p class="myu-post-archive-date"><?php the_date(); ?></p>
                     <!-- カテゴリ -->
-<<<<<<< HEAD
-                    <p class="myu-post-archive-category"><?php the_category(', '); ?></p>
-                    <!-- 抜粋 -->
-=======
                     <p class="myu-post-archive-category"><i class="fas fa-folder-open"></i><?php the_category(', '); ?></p>
                     <!-- サムネ画像。持っていたら表示、持っていなかったらNoImage -->
->>>>>>> archive
                     <p class="myu-post-archive-excerpt"><?php the_excerpt(); ?></p>
                 </div>
                 <a class="myu-post-archive-link" href="<?php the_permalink(); ?>"></a>

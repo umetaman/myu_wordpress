@@ -82,7 +82,7 @@ $organizer = tribe_get_organizer();
 		</div>
 
 		<div class="view-event-detail-btn">
-			<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="myu-single-event-read-more" rel="bookmark">
+			<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="myu-single-event-read-more myu-btn" rel="bookmark">
 				<?php esc_html_e( 'Find out more', 'the-events-calendar' ) ?>
 			</a>
 		</div>
