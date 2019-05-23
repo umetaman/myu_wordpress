@@ -8,7 +8,7 @@ h2#myu-latest-posts-title{
 .myu-latest-posts-wrapper{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .myu-latest-post{
@@ -103,7 +103,7 @@ ul.myu-list-widget{
     padding: 0;
 
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 /* イベント項目 */
