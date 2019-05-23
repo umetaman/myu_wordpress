@@ -87,7 +87,7 @@ class MyuLatestPosts extends WP_Widget{
             <input 
             class="widefat" 
             id="<?php echo $this->get_field_id('new_title'); ?>" 
-            name="<?php echo $this->get_field_id('new_title'); ?>" type="text"
+            name="<?php echo $this->get_field_name('new_title'); ?>" type="text"
             value="<?php echo $new_title; ?>"
             >
         </p>
@@ -99,7 +99,7 @@ class MyuLatestPosts extends WP_Widget{
             <input 
             class="widefat" 
             id="<?php echo $this->get_field_id('entry_count'); ?>" 
-            name="<?php echo $this->get_field_id('entry_count'); ?>" type="text"
+            name="<?php echo $this->get_field_name('entry_count'); ?>" type="text"
             value="<?php echo $entry_count; ?>"
             >
         </p>
@@ -111,7 +111,7 @@ class MyuLatestPosts extends WP_Widget{
             <input 
             class="widefat" 
             id="<?php echo $this->get_field_id('archive_link'); ?>" 
-            name="<?php echo $this->get_field_id('archive_link'); ?>" type="text"
+            name="<?php echo $this->get_field_name('archive_link'); ?>" type="text"
             value="<?php echo $archive_link; ?>"
             >
         </p>
