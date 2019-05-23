@@ -24,9 +24,7 @@ class MyuLatestPosts extends WP_Widget{
 
             <ul id="myu-post-archives" class="myu-latest-posts-wrapper"> 
             <?php
-            //3つまで最新の記事を取得する
-
-            query_posts("posts_per_page=3");
+            query_posts("posts_per_page=".$entry_count);
             while(have_posts()): the_post();
             ?>
 
