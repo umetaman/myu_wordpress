@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
     require "SlackBot.php";
+=======
+    require("MyuLatestPosts.php");
+>>>>>>> master
 
     //テーマについて
     add_theme_support("title-tag");
@@ -27,19 +31,32 @@
         );
     }
     add_action("wp_enqueue_scripts", "navbutton_scripts");
+
+    //Stickyヘッダー
+    function sticky_scripts(){
+        wp_enqueue_script(
+            "sticky_script",
+            get_template_directory_uri()."/js/sticky.js",
+            array("jquery")
+        );
+    }
+    add_action("wp_enqueue_scripts", "sticky_scripts");
     
     function myu_widgets_init() {
 
         register_sidebar( array(
             'name' => 'MYU Main Widgets',
             'id' => 'myu-main-widgets',
-            'before_widget' => '<div>',
+            'before_widget' => '<div class="myu-main-widget">',
             'after_widget' => '</div>',
             'before_title' => '<h2 class="myu-main-widget-title">',
             'after_title' => '</h2>',
         ));
+
+        register_widget('MyuLatestPosts');
     }
     add_action( 'widgets_init', 'myu_widgets_init' );
+<<<<<<< HEAD
 
     /*
     フォームの内容をSlackへ送信する
@@ -76,4 +93,6 @@
             'description' => '最新の記事を表示する。WordPress標準のものでは足りないので作った。'
         ));
     
+=======
+>>>>>>> master
 ?>

@@ -1,16 +1,17 @@
 <?php
-// Template Name: Archives
+// Template Name: Category
 ?>
 <?php get_header(); ?>
 
 <div class="container">
     <div class="contents">
-        <h1 class="entry-title"><?php the_title(); ?></h1>
+        <h1 class="entry-title"><?php single_cat_title("カテゴリー別記事一覧: "); ?></h1>
         <!-- 投稿された記事の一覧 -->
         <ul id="myu-post-archives">
         <?php
         //すべての記事を取得
-        $posts = get_posts(null);
+        $post_params = array("category_name" => single_cat_title(null, false));
+        $posts = get_posts($post_params);
 
         //繰り返しで出力
         foreach($posts as $post):

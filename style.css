@@ -2,9 +2,11 @@
 
 /*
 Theme Name: MYU WordPress
+Theme URL: http://dmc.myu.ac.jp/
 Author: umetaman
-Description: DMCオリジナルのWordPressテーマです
-version: β3
+Description: MYU Data & Media Commonsが作成したWordPressのテーマです。フロントページに最新の投稿記事とイベントを掲載するウィジェットを搭載しています。
+License: GNU General Public License v2 or later
+version: 1.1
 */
 
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
@@ -22,8 +24,17 @@ h1, h2, h3, h4, h5, h6{
     font-weight: bold;
 }
 
-footer{
-    color: #999999;
+/* スマホ版ナビゲーション表示ボタン */
+#navbutton{
+    min-width: 60px;
+    min-height: 60px;
+    font-size: 32px;
+    border: 0px;
+    background-color: rgba(0,0,0,0); 
+}
+
+#navbutton > i{
+    margin: auto auto;
 }
 
 .wp-block-separator{
@@ -49,51 +60,128 @@ header #dmc-logo{
     padding: 0;
 }
 
-/* デスクトップ版ナビゲーション */
-#header-nav{
-    width: 100%;
-    background-color: #eee;
-    overflow: hidden;
-}
+/* 
+デスクトップ版ナビゲーション
+ */
 
-#header-nav ul{
-    width: 100%;
-    list-style-type: none;
+.header-nav-wrapper{
     display: flex;
+    background-color: rgba(200,200,200,1);
+    height: 65px;
+}
+
+/* ulの余白なし */
+ul#menu-header{
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
+    list-style: none;
 }
 
-#header-nav li{
-    text-align: center;
-    margin: 0 15px;
-}
-
-#header-nav li a{
+ul#menu-header > li > a{
+    padding: 5px 15px;
     text-decoration: none;
-    color: #444;
+    color: #333333;
+    font-size: 18px;
     font-weight: bold;
-    padding: 10px 20px;
-    font-size: 1.2em;
 }
 
-#header-nav li a:hover{
-    background-color: #ddd;
-    transition: 0.2s;
+/* デスクトップ版ではボタンを非表示に */
+#navbutton{
+    display: none;
 }
 
-/* 記述場所は違うが、main-widget.cssに書いても適用されない */
-#main-infomation{
-    filter: drop-shadow(4px 4px 4px rgba(0,0,0,0.35));
-    margin: 40px 0;
+/* 横幅を定義 */
+nav#header-nav{
+    width: 100%;
 }
 
-#main-infomation .main-widget{
-    border-radius: 10px;
-    border: 1px solid #eee;
-    padding: 10px;
-    margin: 15px;
+/* Stickyのときのみ表示 */
+#header-logo-wrapper > a > img{
+    display: none;
+    height: 55px;
+    width: auto;
+    margin: 5px 0;
+    padding-left: 30%;
 }
 
+/* Stickyヘッダー */
+.header-nav-wrapper.sticky-header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    box-shadow: 0 0.03rem 0.06rem rgba(0,0,0,0.1), 0 0.1rem 0.3rem rgba(0,0,0,0.1);
+} 
+
+.sticky-header #menu-header{
+    padding-right: 30px;
+}
+
+/* ホバーナビゲーションはデスクトップでは非表示に */
+.header-hover-nav-wrapper{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+    z-index: 3;
+}
+
+.header-hover-nav-wrapper > *{
+    display: none;
+    z-index: inherit;
+}
+
+/* 画面中央に縦並び */
+nav#header-hover-nav{
+    margin: auto 0;
+    height: 100%;
+}
+
+.header-hover-nav-wrapper > #header-hover-nav > ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+
+    height: 100%;
+}
+
+/* ホバーナビゲーションのリンク */
+.header-hover-nav-wrapper > #header-hover-nav > ul > li{
+    margin: 10px;
+}
+
+.header-hover-nav-wrapper > #header-hover-nav > ul > li > a{
+    box-sizing: border-box;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333333;
+}
+
+#hover-nav-cancel-button{
+    background-color: rgba(0,0,0,0);
+    border: 0px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 4;
+}
+
+#hover-nav-cancel-button > i{
+    font-size: 45px;
+}
+
+/* コンテンツ, 横幅制限 */
 .contents{
     display: flex;
     flex-direction: column;
@@ -108,11 +196,10 @@ header #dmc-logo{
     box-sizing: border-box;
 }
 
-#sidebar{
-    background-color: #aefffc;
-}
-
+/* フッター */
 footer{
+    display: block;
+    color: #999999;
     background-color: #ddd;
 }
 
@@ -208,35 +295,10 @@ footer{
 }
 
 /* スマートフォン対応 */
+
 /* メニューボタン */
 .header-inner{
     position: relative;
-}
-
-#navbutton{
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    padding: 8px 12px;
-    cursor: pointer;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    border: solid 1px #aaa;
-    border-radius: 5px;
-    background-color: #fff;
-}
-
-#navbutton:hover{
-    background-color: #ddd;
-}
-
-#navbutton:focus{
-    outline: none;
-}
-
-#navbutton i {
-    font-size: 2em;
-    color: #333;
 }
 
 /* エクスポートボタンは無効 */
@@ -255,7 +317,7 @@ footer{
 
 
 @media (min-width: 768px){
-    /* コンテンツ、及びサイドバーは横並び */
+
     .container:after{
         display: block;
         clear: both;
@@ -278,32 +340,6 @@ footer{
         display: inline;
     }
 
-    #header-nav{
-        display: block;
-    }
-    .header-nav{
-        /* max-width: 1200px; */
-        margin: 0 auto;
-        padding: 0 10px;
-        box-sizing: border-box;
-        text-align: center;
-    }
-    .header-nav ul:after{
-        display: block;
-        clear: both;
-        content: "";
-    }
-    .header-nav li{
-        display: inline-block;
-        width: auto;
-    }
-    .header-nav li a{
-        font-size: 1.1em;
-        padding: 5px 10px;
-    }
-    #navbutton{
-        display: none;
-    }
 }
 
 @media (min-width: 600px){
@@ -312,6 +348,9 @@ footer{
     }
 }
 
+/*
+ スマートフォン版
+ */
 @media (max-width: 767px){
     #p5-canvas{
         display: none;
@@ -321,62 +360,48 @@ footer{
         display: inherit;
     }
 
-    /*スマホ用 ヘッダーナビゲーション */
-    #header-nav{
-        display: none;
-    }
-
-    .header-nav{
-        padding-left: 10px;
-    }
-
-    .header-nav #menu-header{
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        display: inline;
-    }
-
-    .header-nav #menu-header > li{
-        text-align: left;
-    }
-
-    .header-nav li a:before{
-        content: "\f0da";
-        font-family: "Font Awesome 5 Free";
-        color: #555;
-        font-size: 0.9em;
-        padding-right: 3px;
-    }
-
-    .header-nav li a{
-        display: block;
-        padding: 15px 5px;
-        color: #000;
-        font-weight: bold;
-        font-size: 1em;
-        text-decoration: none;
-    }
-
-    .header-nav li a:hover{
-        opacity: 0.8;
-    }
-
-    ul {
-        padding-left: 20px;
-    }
-
-    /* メインウィジェット */
-    #main-infomation{
-        flex-direction: column;
-    }
-
-    .main-widget{
-        width: auto;
-    }
-
     .wp-block-columns > .wp-block-column{
         margin: 32px 10px!important;
+    }
+
+    /* ロゴはスマホ版では左寄り */
+    #header-logo-wrapper > a > img{
+        padding-left: 10%;
+    }
+
+    .header-nav-wrapper{
+        justify-content: flex-end;
+    }
+
+    .header-nav-wrapper.sticky-header{
+        justify-content: space-between;
+        z-index: 3;
+    }
+
+    /* 別レイヤーで表示したいので、flexを解除 */
+    #header-nav{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+    }
+
+    ul#menu-header{
+        display: none;
+        margin: 0;
+        /* padding: 100%; */
+        background-color: rgba(255, 255, 255, 0.75);
+    }
+
+    #navbutton{
+        display: flex;
+        margin-right: 10px;
+    }
+
+    /* ホバーナビゲーション */
+    .header-hover-nav-wrapper, .header-hover-nav-wrapper > *{
+        display: block;
     }
 }
 
@@ -424,15 +449,22 @@ footer{
 }
 
 /* ボタンの共通スタイル */
+.myu-btn{
+    box-sizing: border-box;
+    padding: 7px 20px;
+    border-radius: 28px;
+    text-decoration: none;
+}
+
 .myu-btn, .wp-block-button__link{
-    box-shadow: 0 0.09rem 0.18rem rgba(0,0,0,0.1),
-    0 0.3rem 0.9rem rgba(0,0,0,0.1);
+    box-shadow: 0 0.04rem 0.09rem rgba(0,0,0,0.1),
+    0 0.15rem 0.45rem rgba(0,0,0,0.1);
     transition: 0.3s;
 }
 
 .myu-btn:hover, .wp-block-button__link:hover{
-    box-shadow: 0 0.18rem 0.36rem rgba(0,0,0,0.1),
-    0 0.6rem 1.8rem rgba(0,0,0,0.1);
+    box-shadow: 0 0.08rem 0.18rem rgba(0,0,0,0.1),
+    0 0.3rem 0.9rem rgba(0,0,0,0.1);
 
     transition: 0.3s;
 }
