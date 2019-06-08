@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD
-    require "SlackBot.php";
-=======
     require("MyuLatestPosts.php");
->>>>>>> master
 
     //テーマについて
     add_theme_support("title-tag");
@@ -56,43 +52,5 @@
         register_widget('MyuLatestPosts');
     }
     add_action( 'widgets_init', 'myu_widgets_init' );
-<<<<<<< HEAD
 
-    /*
-    フォームの内容をSlackへ送信する
-    依存プラグイン -> ContactForm7
-    */
-    function send_to_slack($cf7){
-        $slack = new SlackBot(
-            "https://hooks.slack.com/services/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", ""
-        );
-
-
-        $slack->set_message("送信テストです");
-        $slack->set_channel("#問い合わせ");
-
-        $slack->send_message();
-        
-        return 0;
-    }
-    
-    add_action("wpcf7_before_send_mail", "send_to_slack");
-
-
-    /*
-    MYU Latest Post
-    最新の記事を表示する。
-    本家WordPressの機能の拡張
-    */
-
-    wp_register_sidebar_widget(
-        'myu_latest_post_widget', 
-        'MYU Latest Post',
-        'myu_latest_post_display', 
-        array(
-            'description' => '最新の記事を表示する。WordPress標準のものでは足りないので作った。'
-        ));
-    
-=======
->>>>>>> master
 ?>
