@@ -38,13 +38,38 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .wp-block-separator{
-    margin: 30px;
+    margin: 32px 5px;
 }
 
 .contents{
     height: 800px;
     width: 100%;
-} 
+}
+
+article.post-article > h1#post-title{
+    margin: 12px 0px;
+}
+
+article.post-article > .post-image > img{
+    box-sizing: border-box;
+    margin: 24px 0px;
+}
+
+article.post-article  p{
+    margin: 0px 32px;
+}
+
+article.post-article h1,
+article.post-article h2,
+article.post-article h3,
+article.post-article h4,
+article.post-article h5{
+    margin: 6px 12px;
+}
+
+.wp-block-columns > .wp-block-column{
+    margin: 16px 32px!important;
+}
 
 header #dmc-logo img{
     width: 100%;
@@ -310,11 +335,6 @@ footer{
 #tribe-events-header{
     display: none;
 }
-
-.wp-block-columns > .wp-block-column{
-    margin: 32px!important;
-}
-
 
 @media (min-width: 768px){
 
