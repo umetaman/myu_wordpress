@@ -19,53 +19,55 @@
 </head>
 <body　<?php body_class(); ?>>
     <header>
-        <div id="p5-canvas">
-            <iframe class="p5-animation" scrolling="no" src="<?php echo get_template_directory_uri().'/p5js/index.html'; ?>" frameborder="0"></iframe>
-        </div>
-        <div id="dmc-logo">
-            <img src="<?php echo get_template_directory_uri(); ?>/p5js/image/web_dmc_header.png" alt="<?php bloginfo("name");?>">
-        </div>
-
-        <!-- ヘッダー -->
-        <div class="header-nav-wrapper">
-            <div id="header-logo-wrapper">
-                <a href="<?php echo site_url(); ?>">
-                    <img src="<?php echo get_template_directory_uri()."/images/dmc_logo.png"; ?>" alt="">
-                </a>
+        <div class='header-inner'>
+            <div id="p5-canvas">
+                <iframe class="p5-animation" scrolling="no" src="<?php echo get_template_directory_uri().'/p5js/index.html'; ?>" frameborder="0"></iframe>
             </div>
-        <?php
-            wp_nav_menu(
-                array(
-                    "theme_location" => "header-nav",   //functions.phpに記述した値との関連付け
-                    "container" => "nav",               //ナビゲーション全体を囲むタグの指定
-                    "container_class" => "header-nav",  //containerのクラス
-                    "container_id" => "header-nav",
-                    "fallback_cb" => ""                 //ナビゲーションメニューが空のとき
-                )
-            );
-        ?>
-        <!-- スマートフォン用のメニューボタン -->
-        <button type="button" id="navbutton">
-            <i class="fas fa-bars"></i>
-        </button>
-        </div>
+            <div id="dmc-logo">
+                <img src="<?php echo get_template_directory_uri(); ?>/p5js/image/web_dmc_header.png" alt="<?php bloginfo("name");?>">
+            </div>
 
-        <!-- スマホ版ホバーナビゲーション -->
-        <div class="header-hover-nav-wrapper">
-            <button id="hover-nav-cancel-button">
-                <i class="fas fa-times"></i>
-        </button>
+            <!-- ヘッダー -->
+            <div class="header-nav-wrapper">
+                <div id="header-logo-wrapper">
+                    <a href="<?php echo site_url(); ?>">
+                        <img src="<?php echo get_template_directory_uri()."/images/dmc_logo.png"; ?>" alt="">
+                    </a>
+                </div>
             <?php
-            wp_nav_menu(
-                array(
-                    "theme_location" => "header-nav",
-                    "container" => "nav",
-                    "container_class" => "header-hover-nav",
-                    "container_id" => "header-hover-nav",
-                    "fallback_cb" => ""
-                )
-            );
+                wp_nav_menu(
+                    array(
+                        "theme_location" => "header-nav",   //functions.phpに記述した値との関連付け
+                        "container" => "nav",               //ナビゲーション全体を囲むタグの指定
+                        "container_class" => "header-nav",  //containerのクラス
+                        "container_id" => "header-nav",
+                        "fallback_cb" => ""                 //ナビゲーションメニューが空のとき
+                    )
+                );
             ?>
+            <!-- スマートフォン用のメニューボタン -->
+            <button type="button" id="navbutton">
+                <i class="fas fa-bars"></i>
+            </button>
+            </div>
+
+            <!-- スマホ版ホバーナビゲーション -->
+            <div class="header-hover-nav-wrapper">
+                <button id="hover-nav-cancel-button">
+                    <i class="fas fa-times"></i>
+            </button>
+                <?php
+                wp_nav_menu(
+                    array(
+                        "theme_location" => "header-nav",
+                        "container" => "nav",
+                        "container_class" => "header-hover-nav",
+                        "container_id" => "header-hover-nav",
+                        "fallback_cb" => ""
+                    )
+                );
+                ?>
+            </div>
         </div>
     </header>
 </body>

@@ -1,6 +1,6 @@
 <footer>
     <div class="footer-inner">
-        <div class="footer-nav-area">
+        <div class="footer-nav-wrapper">
         <?php
         wp_nav_menu(array(
             "theme_location" => "footer-nav",

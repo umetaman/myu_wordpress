@@ -1,5 +1,4 @@
-@charset "utf-8";
-
+@charset "UTF-8";
 /*
 Theme Name: MYU WordPress
 Theme URL: http://dmc.myu.ac.jp/
@@ -8,483 +7,128 @@ Description: MYU Data & Media Commonsが作成したWordPressのテーマです�
 License: GNU General Public License v2 or later
 version: 1.2
 */
-
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
-
-body{
-    font-family: 'Noto Sans JP', sans-serif, 'メイリオ', 'Meiryo';
-    font-size: 16px;
-    line-height: 1.7;
-    margin: 0;
-    padding: 0;
-    color: black;
+@import url(./styles/nav.css);
+@import url(./styles/gutenberg_fix.css);
+* {
+  box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6{
-    font-weight: bold;
+body {
+  font-family: 'Noto Sans JP', sans-serif, 'メイリオ', 'Meiryo';
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  color: #000000;
 }
 
-/* スマホ版ナビゲーション表示ボタン */
-#navbutton{
-    min-width: 60px;
-    min-height: 60px;
-    font-size: 32px;
-    border: 0px;
-    background-color: rgba(0,0,0,0); 
-}
-
-#navbutton > i{
-    margin: auto auto;
-}
-
-.wp-block-separator{
-    margin: 32px 5px;
-}
-
-.contents{
-    height: 800px;
-    width: 100%;
-}
-
-article.post-article > h1#post-title{
-    margin: 12px 0px;
-}
-
-article.post-article > .post-image > img{
-    box-sizing: border-box;
-    margin: 24px 0px;
-}
-
-article.post-article  p{
-    margin: 0px 32px;
-}
-
-article.post-article h1,
-article.post-article h2,
-article.post-article h3,
-article.post-article h4,
-article.post-article h5{
-    margin: 6px 12px;
-}
-
-.wp-block-columns > .wp-block-column{
-    margin: 16px 32px!important;
-}
-
-header #dmc-logo img{
-    width: 100%;
-    height: auto;
-}
-
-header #dmc-logo{
-    text-align: center;
-    display: none;
-}
-
-.header-inner{
-    padding: 0;
-}
-
-/* 
-デスクトップ版ナビゲーション
- */
-
-.header-nav-wrapper{
-    display: flex;
-    background-color: rgba(200,200,200,1);
-    height: 65px;
-}
-
-/* ulの余白なし */
-ul#menu-header{
-    padding-left: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    list-style: none;
-}
-
-ul#menu-header > li > a{
-    padding: 5px 15px;
-    text-decoration: none;
-    color: #333333;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-/* デスクトップ版ではボタンを非表示に */
-#navbutton{
-    display: none;
-}
-
-/* 横幅を定義 */
-nav#header-nav{
-    width: 100%;
-}
-
-/* Stickyのときのみ表示 */
-#header-logo-wrapper > a > img{
-    display: none;
-    height: 55px;
-    width: auto;
-    margin: 5px 0;
-    padding-left: 30%;
-}
-
-/* Stickyヘッダー */
-.header-nav-wrapper.sticky-header{
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    box-shadow: 0 0.03rem 0.06rem rgba(0,0,0,0.1), 0 0.1rem 0.3rem rgba(0,0,0,0.1);
-} 
-
-.sticky-header #menu-header{
-    padding-right: 30px;
-}
-
-/* ホバーナビゲーションはデスクトップでは非表示に */
-.header-hover-nav-wrapper{
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.85);
-    z-index: 3;
-}
-
-.header-hover-nav-wrapper > *{
-    display: none;
-    z-index: inherit;
-}
-
-/* 画面中央に縦並び */
-nav#header-hover-nav{
-    margin: auto 0;
-    height: 100%;
-}
-
-.header-hover-nav-wrapper > #header-hover-nav > ul{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    list-style: none;
-    padding: 0;
-
-    height: 100%;
-}
-
-/* ホバーナビゲーションのリンク */
-.header-hover-nav-wrapper > #header-hover-nav > ul > li{
-    margin: 10px;
-}
-
-.header-hover-nav-wrapper > #header-hover-nav > ul > li > a{
-    box-sizing: border-box;
-    padding: 5px 10px;
-    text-decoration: none;
-    font-size: 28px;
-    font-weight: bold;
-    color: #333333;
-}
-
-#hover-nav-cancel-button{
-    background-color: rgba(0,0,0,0);
-    border: 0px;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 4;
-}
-
-#hover-nav-cancel-button > i{
-    font-size: 45px;
-}
-
-/* コンテンツ, 横幅制限 */
-.contents{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    margin: 0 auto;
-
-    /* paddingを含めた大きさとする */
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-/* フッター */
-footer{
-    display: block;
-    color: #999999;
-    background-color: #ddd;
-}
-
-.footer-nav{
-    margin-bottom: 20px;
-}
-
-.footer-nav ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.footer-nav ul:after{
-    display: block;
-    clear: both;
-    content: "";
-}
-
-.footer-nav li{
-    float: left;
-    width: 50%;
-    text-align: center;
-}
-
-.footer-nav li a{
-    font-size: 0.9em;
-    display: block;
-    padding: 10px 5px;
-    text-decoration: none;
-}
-
-.footer-nav li a:hover{
-    opacity: 0.6;
-}
-
-.footer-inner{
-    background-color: #ddd;
-    height: 150px;
-}
-
-.copyright p {
-    font-size: 0.9em;
-    margin: 20px 0;
-    text-align: center;
-}
-
-/*Width*/
-.header-inner, .container, .footer-inner, #tribe-events-pg-template{
-    max-width: 1200px;
-    margin: auto;
-
-    /*ボックスサイズの定義*/
-    padding: 10px;
-    /* paddingを含めた大きさとする */
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.contents{
-    margin: 20px 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 10px 30px;
-}
-
-/* columnの画像 */
-.wp-block-image img{
-    width: 100%;
-    height: auto;
-}
-
-/* サイトタイトル */
-.site-title{
-    text-align: left;
-}
-
-.site-title h1{
-    margin: 0;
-    padding: 10px 5px 0;
-    line-height: 1;
-}
-
-.site-title h1 img{
-    width: auto;
-    height: 70px;
-}
-
-.site-title a{
-    display: block;
-}
-
-/* スマートフォン対応 */
-
-/* メニューボタン */
-.header-inner{
-    position: relative;
-}
-
-/* エクスポートボタンは無効 */
-#tribe-events-content > a{
-    display: none!important;
-}
-
-/* 次のイベントへのナビゲーション（上部）の削除 */
-#tribe-events-header{
-    display: none;
-}
-
-@media (min-width: 768px){
-
-    .container:after{
-        display: block;
-        clear: both;
-        content: '';
-    }
-
-    .contents{
-        float: left;
-        widows: 70%;
-        margin-right: 2%;
-    }
-
-    #sidebar{
-        float: right;
-        width: 28%;
-    }
-
-    /* PCヘッダー */
-    #p5-canvas{
-        display: inline;
-    }
-
-}
-
-@media (min-width: 600px){
-    .wp-block-columns > .wp-block-column{
-        flex-basis: 100%;
-    }
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
 }
 
 /*
- スマートフォン版
- */
-@media (max-width: 767px){
-    #p5-canvas{
-        display: none;
-    }
-
-    header #dmc-logo{
-        display: inherit;
-    }
-
-    .wp-block-columns > .wp-block-column{
-        margin: 32px 10px!important;
-    }
-
-    /* ロゴはスマホ版では左寄り */
-    #header-logo-wrapper > a > img{
-        padding-left: 10%;
-    }
-
-    .header-nav-wrapper{
-        justify-content: flex-end;
-    }
-
-    .header-nav-wrapper.sticky-header{
-        justify-content: space-between;
-        z-index: 3;
-    }
-
-    /* 別レイヤーで表示したいので、flexを解除 */
-    #header-nav{
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 3;
-    }
-
-    ul#menu-header{
-        display: none;
-        margin: 0;
-        /* padding: 100%; */
-        background-color: rgba(255, 255, 255, 0.75);
-    }
-
-    #navbutton{
-        display: flex;
-        margin-right: 10px;
-    }
-
-    /* ホバーナビゲーション */
-    .header-hover-nav-wrapper, .header-hover-nav-wrapper > *{
-        display: block;
-    }
+    ヘッダー
+*/
+header #dmc-logo {
+  text-align: center;
+  display: none;
+}
+header #dmc-logo img {
+  width: 100%;
+  height: auto;
 }
 
-@media (max-width: 599px){
-    
+/*
+    .contents > .post-content, article.post-article
+*/
+div.contents {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 10px 30px;
+  margin: 20px 0px;
+  flex-direction: column;
 }
 
-/* トップに戻る */
-#page-top{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+article.post-article h1#post-title {
+  margin: 12px 0px;
+}
+article.post-article h1, article.post-article h2, article.post-article h3, article.post-article h4, article.post-article h5, article.post-article h6 {
+  margin: 6px 12px;
+}
+article.post-article div.post-image > img {
+  margin: 24px 0px;
+}
+article.post-article p {
+  margin: 0px 32px;
 }
 
-#page-top i{
-    padding-top: 6px;
+.header-inner {
+  position: relative;
+  width: 100%;
 }
 
-#page-top a{
-    display: block;
-    z-index: 999;
-    background-color: #a8a8a8;
-    padding: 8px 16px;
-    border-radius: 50%;
-    color: #fff;
+.container,
+.footer-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px;
 }
 
-#page-top a{
-    text-decoration: none;
-    opacity: 0.7;
+/*
+    フッター
+    今のところナビゲーションはなし。一応実装。
+*/
+footer {
+  display: block;
+  color: #999999;
+  background-color: #dddddd;
+}
+footer > .footer-inner {
+  height: 150px;
+}
+footer > .footer-inner > .footer-nav-wrapper > .footer-nav {
+  margin-bottom: 20px;
+}
+footer > .footer-inner > .footer-nav-wrapper > .footer-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+footer > .footer-inner > .footer-nav-wrapper > .footer-nav ul li {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+footer > .footer-inner > .footer-nav-wrapper > .footer-nav ul li a {
+  font-size: 0.9em;
+  display: block;
+  padding: 10px 5px;
+  text-decoration: none;
+}
+footer > .footer-inner > .footer-nav-wrapper > .footer-nav ul li a:hover {
+  opacity: 0.6;
+}
+footer > .footer-inner > .footer-nav-wrapper > .footer-nav ul:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+footer > .footer-inner > .copyright > p {
+  font-size: 0.9em;
+  padding: 20px 0px;
+  text-align: center;
 }
 
-/* 投稿ページ */
-.post-article #post-title{
-    font-size: 30px;
+@media (max-width: 768px) {
+  #p5-canvas {
+    display: none;
+  }
+
+  header #dmc-logo {
+    display: inherit;
+  }
 }
 
-.post-image{
-    text-align: center;
-}
-
-.post-image img{
-    width: 100%;
-    height: auto;
-}
-
-/* ボタンの共通スタイル */
-.myu-btn{
-    box-sizing: border-box;
-    padding: 7px 20px;
-    border-radius: 28px;
-    text-decoration: none;
-}
-
-.myu-btn, .wp-block-button__link{
-    box-shadow: 0 0.04rem 0.09rem rgba(0,0,0,0.1),
-    0 0.15rem 0.45rem rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-
-.myu-btn:hover, .wp-block-button__link:hover{
-    box-shadow: 0 0.08rem 0.18rem rgba(0,0,0,0.1),
-    0 0.3rem 0.9rem rgba(0,0,0,0.1);
-
-    transition: 0.3s;
-}
+/*# sourceMappingURL=style.css.map */

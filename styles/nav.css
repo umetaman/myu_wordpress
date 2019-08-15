@@ -1,0 +1,91 @@
+#navbutton {
+  min-width: 60px;
+  min-height: 60px;
+  font-size: 32px;
+  border: 0px;
+  background-color: rgba(0, 0, 0, 0);
+  display: none;
+}
+#navbutton i {
+  margin: auto auto;
+}
+
+header > .header-inner div.header-nav-wrapper {
+  display: flex;
+  background-color: #c8c8c8;
+  height: 65px;
+}
+header > .header-inner div.header-nav-wrapper #menu-header {
+  padding-left: 30px;
+}
+header > .header-inner div.header-nav-wrapper div#header-logo-wrapper > a > img {
+  display: none;
+  height: 55px;
+  width: auto;
+  margin: 5px 0px;
+  padding-left: 30%;
+}
+header > .header-inner div.header-nav-wrapper nav#header-nav {
+  width: 100%;
+}
+header > .header-inner div.header-nav-wrapper nav#header-nav > ul#menu-header {
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+}
+header > .header-inner div.header-nav-wrapper nav#header-nav > ul#menu-header > li > a {
+  padding: 5px 15px;
+  text-decoration: none;
+  color: #333333;
+  font-size: 18px;
+  font-weight: 600;
+}
+header > .header-inner .sticky-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  box-shadow: 0 0.03rem 0.06rem rgba(0, 0, 0, 0.1), 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+}
+header > .header-inner .header-hover-nav-wrapper > * {
+  display: none;
+  z-index: inherit;
+}
+header > .header-inner .header-hover-nav-wrapper nav#header-hover-nav {
+  margin: auto 0;
+  height: 100%;
+}
+header > .header-inner .header-hover-nav-wrapper nav#header-hover-nav > ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  list-style: none;
+}
+header > .header-inner .header-hover-nav-wrapper nav#header-hover-nav > ul > li {
+  margin: 10px;
+}
+header > .header-inner .header-hover-nav-wrapper nav#header-hover-nav > ul > li > a {
+  padding: 5px 10px;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 600;
+  color: #333333;
+}
+header > .header-inner .header-hover-nav-wrapper button#hover-nav-cancel-button {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  border: 0px;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 4;
+}
+header > .header-inner .header-hover-nav-wrapper button#hover-nav-cancel-button > i {
+  font-size: 30px;
+}
+
+/*# sourceMappingURL=nav.css.map */

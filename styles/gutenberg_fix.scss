@@ -1,0 +1,35 @@
+// Gutenbergのイケていないところを修正する
+@import "./media_break.css";
+
+// セパレーター
+hr.wp-block-separator{
+    margin: 32px 5px;
+}
+
+div.post-content{
+    div.wp-block-image img{
+        width: 100%;
+        height: auto;
+    }
+
+    // カラムに分けたとき
+    div.wp-block-columns{
+        > div.wp-block-column{
+            margin: 16px 32px;
+
+            //画像はブロックいっぱいに
+            > div.wp-block-image img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    div.wp-block-columns{
+        div.wp-block-column{
+            margin: 8px 0px !important;
+        }
+    }   
+}
