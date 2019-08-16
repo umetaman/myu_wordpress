@@ -1,34 +1,3 @@
-@charset "UTF-8";
-/*
-    共通のパーツ
-*/
-.myu-main-widget-title {
-  text-align: center;
-}
-
-ul.myu-list-widget {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-ul.myu-list-widget > li.myu-events-list-widget-events {
-  width: 31%;
-  height: auto;
-  padding: 15px 20px;
-  margin: 25px 0px;
-  background-color: #eeeeee;
-  box-shadow: 0 0.03rem 0.06rem rgba(0, 0, 0, 0.1), 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
-  position: relative;
-  z-index: 1;
-}
-ul.myu-list-widget > li.myu-events-list-widget-events:hover {
-  box-shadow: 0 0.09rem 0.15rem rgba(0, 0, 0, 0.1), 0 0.5rem 0.9rem rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
-}
-
 /*
     MYU Latest Posts
 */
@@ -93,6 +62,83 @@ div#myu-latest-posts.myu-latest-posts-widget > #widget-archives-link-btn {
   text-align: center;
   background-color: #4d4d4d;
   color: #ffffff;
+}
+
+/*
+    The Events Calendar
+*/
+.myu-main-widget-title {
+  text-align: center;
+}
+
+ul.myu-list-widget {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+@media (max-width: 768px) {
+  ul.myu-list-widget {
+    flex-direction: column;
+  }
+}
+ul.myu-list-widget > li.myu-list-widget-element {
+  width: 31%;
+  height: auto;
+  padding: 15px 20px;
+  margin: 25px 0px;
+  background-color: #eeeeee;
+  box-shadow: 0 0.03rem 0.06rem rgba(0, 0, 0, 0.1), 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  ul.myu-list-widget > li.myu-list-widget-element {
+    width: 100%;
+    height: auto;
+  }
+}
+ul.myu-list-widget > li.myu-list-widget-element:hover {
+  box-shadow: 0 0.09rem 0.15rem rgba(0, 0, 0, 0.1), 0 0.5rem 0.9rem rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+ul.myu-list-widget > li.myu-list-widget-element .myu-event-widget-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-indent: -999px;
+  z-index: 2;
+}
+ul.myu-list-widget > li.myu-list-widget-element > .myu-event-thumbnail-wrapper > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+}
+ul.myu-list-widget > li.myu-list-widget-element > .myu-event-info-wrapper > h3.myu-event-title {
+  margin: 8px 0px;
+}
+ul.myu-list-widget > li.myu-list-widget-element > .myu-event-info-wrapper .myu-event-duration > p > i {
+  margin-right: 10px;
+}
+
+.myu-events-widget-link > #widget-events-link-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 14px 20px;
+  width: 280px;
+  text-align: center;
+  background-color: #4d4d4d;
+  color: #ffffff;
+}
+
+.myu-main-widget {
+  margin: 70px 0px;
 }
 
 /*# sourceMappingURL=widgets.css.map */

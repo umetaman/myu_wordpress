@@ -22,13 +22,13 @@ class MyuLatestPosts extends WP_Widget{
         <div id="myu-latest-posts" class="myu-latest-posts-widget">
             <h2 id="myu-latest-posts-title"><?php echo $new_title; ?></h2>
 
-            <ul id="myu-post-archives" class="myu-latest-posts-wrapper"> 
+            <ul id="myu-post-archives" class="myu-latest-posts-wrapper myu-list-widget"> 
             <?php
             query_posts("posts_per_page=".$entry_count);
             while(have_posts()): the_post();
             ?>
 
-            <li class="myu-latest-post">
+            <li class="myu-latest-post myu-list-widget-element">
                 <?php
                 //サムネ画像が設定されていないとき、NoImageの画像に置き換える。
                 $thumbnail_url = get_template_directory_uri().'/images/no_image.jpg';

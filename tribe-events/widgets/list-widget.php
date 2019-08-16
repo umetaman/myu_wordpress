@@ -39,7 +39,7 @@ if ( $posts ) : ?>
 		foreach ( $posts as $post ) :
 			setup_postdata( $post );
 			?>
-			<li class="myu-events-list-widget-events <?php tribe_events_event_classes() ?>">
+			<li class="myu-list-widget-element myu-events-list-widget-events <?php tribe_events_event_classes() ?>">
 				<?php
 				// イベントの画像があるかどうかを判断する
 				$thumbnail_url = get_template_directory_uri().'/images/no_image.jpg';
