@@ -53,15 +53,18 @@ div.contents {
 
 article.post-article h1#post-title {
   margin: 12px 0px;
+  font-size: 30px;
 }
 article.post-article h1, article.post-article h2, article.post-article h3, article.post-article h4, article.post-article h5, article.post-article h6 {
   margin: 6px 12px;
 }
 article.post-article div.post-image > img {
+  width: 100%;
+  height: auto;
   margin: 24px 0px;
 }
 article.post-article p {
-  margin: 0px 32px;
+  margin: 0px 16px;
 }
 
 .header-inner {
@@ -129,6 +132,45 @@ footer > .footer-inner > .copyright > p {
   header #dmc-logo {
     display: inherit;
   }
+}
+/*
+    トップに戻る
+*/
+#page-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+#page-top i {
+  padding-top: 6px;
+}
+#page-top a {
+  display: block;
+  z-index: 999;
+  background-color: #a8a8a8;
+  padding: 8px 16px;
+  border-radius: 50%;
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+/*
+    ボタン共通スタイル
+*/
+.myu-btn {
+  padding: 7px 20px;
+  border-radius: 28px;
+  text-decoration: none;
+}
+
+.myu-btn, wp-block-button__link {
+  box-shadow: 0 0.04rem 0.09rem rgba(0, 0, 0, 0.1), 0 0.15rem 0.45rem rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+.myu-btn:hover, wp-block-button__link:hover {
+  box-shadow: 0 0.08rem 0.18rem rgba(0, 0, 0, 0.1), 0 0.3rem 0.9rem rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
 }
 
 /*# sourceMappingURL=style.css.map */

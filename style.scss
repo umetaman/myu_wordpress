@@ -68,17 +68,20 @@ article.post-article{
     // タイトル
     h1#post-title{
         margin: 12px 0px;
+        font-size: 30px;
     }
     h1, h2, h3, h4, h5, h6{
         margin: 6px 12px;
     }
     // サムネイル
     div.post-image > img{
+        width: 100%;
+        height: auto;
         margin: 24px 0px;
     }
     // 本文
     p{
-        margin: 0px 32px;
+        margin: 0px 16px;
     }
 }
 
@@ -152,5 +155,52 @@ footer{
 
     header #dmc-logo{
         display: inherit;
+    }
+}
+
+/*
+    トップに戻る
+*/
+
+#page-top{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    i{
+        padding-top: 6px;
+    }
+
+    a{
+        display: block;
+        z-index: 999;
+        background-color: #a8a8a8;
+        padding: 8px 16px;
+        border-radius: 50%;
+        color: #ffffff;
+        text-decoration: none;
+        opacity: 0.7;
+    }
+}
+
+/*
+    ボタン共通スタイル
+*/
+
+.myu-btn{
+    padding: 7px 20px;
+    border-radius: 28px;
+    text-decoration: none;
+}
+
+.myu-btn, wp-block-button__link{
+    box-shadow: 0 0.04rem 0.09rem rgba(0,0,0,0.1),
+    0 0.15rem 0.45rem rgba(0,0,0,0.1);
+    transition: 0.3s;
+
+    &:hover{
+        box-shadow: 0 0.08rem 0.18rem rgba(0,0,0,0.1),
+        0 0.3rem 0.9rem rgba(0,0,0,0.1);
+        transition: 0.3s;
     }
 }

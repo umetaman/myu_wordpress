@@ -1,9 +1,9 @@
-/* p5js Animation */
-#p5-canvas{
-    height: fit-content;
+#p5-canvas {
+  height: fit-content;
+}
+#p5-canvas .p5-animation {
+  width: 100%;
+  height: 350px;
 }
 
-#p5-canvas .p5-animation{
-    width: 100%;
-    height: 350px;
-}
+/*# sourceMappingURL=p5js.css.map */

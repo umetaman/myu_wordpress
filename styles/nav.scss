@@ -9,6 +9,10 @@
     background-color: rgba(0,0,0,0);
     // デスクトップでは非表示に
     display: none;
+    // スマホ版では表示
+    @media (max-width: 768px) {
+        display: block;
+    }
 
     // アイコン
     i{
@@ -17,7 +21,7 @@
 }
 
 header{
-    //ナビゲーション
+    // ナビゲーション
     > .header-inner{ 
         div.header-nav-wrapper{
             display: flex;
@@ -37,7 +41,7 @@ header{
                     height: 55px;
                     width: auto;
                     margin: 5px 0px;
-                    padding-left: 30%;
+                    padding-left: 15px; 
                 }
             }
 
@@ -51,6 +55,11 @@ header{
                     flex-direction: row;
                     justify-content: center;
                     list-style: none;
+
+                    //スマートフォンでは非表示
+                    @media (max-width: 768px) {
+                        display: none;
+                    }
 
                     > li > a{
                         padding: 5px 15px;
@@ -75,10 +84,14 @@ header{
 
         //スマートフォン版ナビゲーション
         .header-hover-nav-wrapper{
-            > *{
-                display: none;
-                z-index: inherit;
-            }
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 4;
+            background-color: rgba(255, 255, 255, 0.75);
+
 
             //全画面ナビゲーションを表示する
             //デフォルトでは非表示
@@ -93,6 +106,8 @@ header{
                     justify-content: center;
                     text-align: center;
                     list-style: none;
+                    margin: 0;
+                    padding: 0;
 
                     > li{
                         margin: 10px;

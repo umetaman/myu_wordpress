@@ -1,0 +1,117 @@
+/*
+    共通のパーツ
+*/
+.myu-main-widget-title{
+    text-align: center;
+}
+
+ul.myu-list-widget{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    > li.myu-events-list-widget-events{
+        width: 31%;
+        height: auto;
+        padding: 15px 20px;
+        margin: 25px 0px;
+
+        background-color: #eeeeee;
+        box-shadow: 0 0.03rem 0.06rem rgba(0,0,0,0.1),
+        0 0.1rem 0.3rem rgba(0,0,0,0.1);
+        transition: 0.3s;
+
+        position: relative;
+        z-index: 1;
+
+        &:hover{
+            box-shadow: 0 0.09rem 0.15rem rgba(0,0,0,0.1),
+            0 0.5rem 0.9rem rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+    }
+}
+
+/*
+    MYU Latest Posts
+*/
+
+div#myu-latest-posts.myu-latest-posts-widget{
+    h2#myu-latest-posts-title{
+        text-align: center;
+    }
+
+    ul#myu-post-archives.myu-latest-posts-wrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        @media (max-width: 768px){
+            flex-direction: column;
+        }
+
+        > li.myu-latest-post{
+            width: 31%;
+            height: auto;
+
+            @media (max-width: 768px){
+                width: 100%;
+            }
+
+            > .myu-latest-post-thumbnail-wrapper
+                > img.myu-latest-post-thumbnail{
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    margin: 0;
+                    padding: 0;
+            }
+
+            > .myu-latest-post-info-wrapper{
+                > h3.myu-latest-post-title{
+                    margin: 8px 0px;
+                }
+
+                > p.myu-latest-post-date,
+                > p.myu-latest-post-category{
+                    margin: 5px 0px;
+                }
+
+                > p.myu-latest-post-category{
+                    > i{
+                        margin-right: 15px;
+                    }
+
+                    //カテゴリーのリンクは優先度高め
+                    > a{
+                        position: relative;
+                        z-index: 3;
+                    }
+                }
+            }
+
+            //リンクは全体に
+            .myu-latest-post-link{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                text-indent: -999px;
+                z-index: 2;
+            }
+        }
+    }
+
+    > #widget-archives-link-btn{
+        display: block;
+        margin: 0 auto;
+        padding: 14px 20px;
+        width: 200px;
+        text-align: center;
+        background-color: #4d4d4d;
+        color: #ffffff;
+    }
+}
