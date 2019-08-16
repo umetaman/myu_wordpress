@@ -1,0 +1,106 @@
+ul#myu-post-archives {
+    // タイトルと記事一覧の余白調整
+    padding: 15px 0px;
+    margin-top: 0;
+    list-style: none;
+
+    >li {
+        padding: 15px 20px;
+        margin: 25px 0px;
+
+        background-color: #eeeeee;
+        box-shadow: 0 0.03rem 0.06rem rgba(0, 0, 0, 0.1),
+            0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+
+        position: relative;
+        z-index: 1;
+
+        &:hover {
+            box-shadow: 0 0.09rem 0.15rem rgba(0, 0, 0, 0.1),
+                0 0.5rem 0.9rem rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .myu-post-archive-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-indent: -999px;
+            z-index: 2;
+        }
+
+        >.myu-post-archive-wrapper {
+            display: flex;
+            flex-direction: row;
+
+            @media (max-width: 768px) {
+                flex-direction: column;   
+            }
+
+            >.myu-post-archive-thumbnail-wrapper{
+                margin-right: 30px;
+
+                @media (max-width: 768px) {
+                    margin-right: 0px;
+                }
+
+                >img.myu-post-archive-thumbnail{
+                    width: 300px;
+                    height: 300px;
+                    object-fit: cover;
+
+                    margin: 0;
+                    padding: 0;
+
+                    @media (max-width: 1024px){
+                        width: 250px;
+                        height: 250px;
+                        object-fit: cover;
+                    }
+
+                    @media (max-width: 768px) {
+                        width: 100%;
+                        height: auto;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            >.myu-post-archive-info-wrapper {
+
+                @media (max-width: 768px) {
+                    margin: 0px 10px;
+                }
+
+                >h2.myu-post-archive-title{
+                    margin: 5px 0px;
+                }
+
+                >.myu-post-archive-date{
+                    margin: 5px 0px;
+                }
+
+                >p.myu-post-archive-category {
+                    margin: 5px 0px;
+
+                    >a {
+                        position: absolute;
+                        z-index: 3;
+                    }
+
+                    >i {
+                        margin-right: 15px;
+                    }
+                }
+
+                >.myu-post-archive-excerpt{
+                    margin-top: 20px;
+                    margin-bottom: 0px;
+                }
+            }
+        }
+    }
+}
