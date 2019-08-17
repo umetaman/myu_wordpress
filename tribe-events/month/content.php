@@ -15,20 +15,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 } ?>
 
-<div id="tribe-events-content" class="tribe-events-month">
+<div id="myu-events-content" class="myu-events-month">
 
 	<!-- Notices -->
 	<?php tribe_the_notices() ?>
 
 	<!-- Month Header -->
 	<?php do_action( 'tribe_events_before_header' ) ?>
-	<div id="tribe-events-header" <?php tribe_events_the_header_attributes() ?>>
+	<div id="myu-events-header" <?php tribe_events_the_header_attributes() ?>>
 
 		<!-- Header Navigation -->
 		<?php tribe_get_template_part( 'month/nav' ); ?>
 
 	</div>
-	<!-- #tribe-events-header -->
+	<!-- #myu-events-header -->
 	<?php do_action( 'tribe_events_after_header' ) ?>
 
 	<!-- Month Grid -->
@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<!-- Month Footer -->
 	<?php do_action( 'tribe_events_before_footer' ) ?>
-	<div id="tribe-events-footer">
+	<div id="myu-events-footer">
 
 		<!-- Footer Navigation -->
 		<?php do_action( 'tribe_events_before_footer_nav' ); ?>
@@ -44,10 +44,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php do_action( 'tribe_events_after_footer_nav' ); ?>
 
 	</div>
-	<!-- #tribe-events-footer -->
+	<!-- #myu-events-footer -->
 	<?php do_action( 'tribe_events_after_footer' ) ?>
 
 	<?php tribe_get_template_part( 'month/mobile' ); ?>
 	<?php tribe_get_template_part( 'month/tooltip' ); ?>
 
-</div><!-- #tribe-events-content -->
+</div><!-- #myu-events-content -->

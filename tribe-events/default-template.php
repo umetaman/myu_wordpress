@@ -17,10 +17,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header();
 ?>
-<main id="tribe-events-pg-template" class="tribe-events-pg-template">
+<!-- The Events Calendarのテンプレート -->
+<main id="myu-events-pg-template" class="myu-events-pg-template">
 	<?php tribe_events_before_html(); ?>
 	<?php tribe_get_view(); ?>
 	<?php tribe_events_after_html(); ?>
-</main> <!-- #tribe-events-pg-template -->
+</main>
 <?php
 get_footer();

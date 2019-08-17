@@ -18,16 +18,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 do_action( 'tribe_events_before_template' );
 ?>
 
-<!-- Title Bar -->
+<!-- タイトルバー -->
 <?php tribe_get_template_part( 'list/title-bar' ); ?>
 
-	<!-- Tribe Bar -->
+	<!-- タイトルバーのモジュール -->
 <?php tribe_get_template_part( 'modules/bar' ); ?>
 
-	<!-- Main Events Content -->
+	<!-- コンテンツ -->
 <?php tribe_get_template_part( 'list/content' ); ?>
 
-	<div class="tribe-clear"></div>
+	<div class="myu-clear"></div>
 
 <?php
 do_action( 'tribe_events_after_template' );

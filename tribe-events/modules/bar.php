@@ -33,41 +33,41 @@ if ( count( $views ) > 1 ) {
 ?>
 
 <?php do_action( 'tribe_events_bar_before_template' ) ?>
-<div id="tribe-events-bar">
+<div id="myu-events-bar">
 
-	<h2 class="tribe-events-visuallyhidden"><?php printf( esc_html__( '%s Search and Views Navigation', 'the-events-calendar' ), tribe_get_event_label_plural() ); ?></h2>
+	<h2 class="myu-events-visuallyhidden"><?php printf( esc_html__( '%s Search and Views Navigation', 'the-events-calendar' ), tribe_get_event_label_plural() ); ?></h2>
 
-	<form id="tribe-bar-form" class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" name="tribe-bar-form" method="post" action="<?php echo esc_attr( $current_url ); ?>">
+	<form id="myu-bar-form" class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" name="tribe-bar-form" method="post" action="<?php echo esc_attr( $current_url ); ?>">
 
 		<?php if ( ! empty( $filters ) ) : ?>
-			<div id="tribe-bar-filters-wrap">
+			<div id="myu-bar-filters-wrap">
 
 				<button
-					id="tribe-bar-collapse-toggle"
+					id="myu-bar-collapse-toggle"
 					aria-expanded="false"
 					type="button"
 					aria-controls="tribe-bar-filters"
 					data-label-hidden="<?php printf( esc_html__( 'Show %s Search', 'the-events-calendar' ), tribe_get_event_label_plural() ); ?>"
 					data-label-shown="<?php printf( esc_html__( 'Hide %s Search', 'the-events-calendar' ), tribe_get_event_label_plural() ); ?>"
 				>
-					<span class="tribe-bar-toggle-text">
+					<span class="myu-bar-toggle-text">
 						<?php printf( esc_html__( 'Show %s Search', 'the-events-calendar' ), tribe_get_event_label_plural() ); ?>
 					</span>
-					<span class="tribe-bar-toggle-arrow"></span>
+					<span class="myu-bar-toggle-arrow"></span>
 				</button>
 
-				<div id="tribe-bar-filters" class="tribe-bar-filters" aria-hidden="true">
-					<div class="tribe-bar-filters-inner tribe-clearfix">
-						<h3 class="tribe-events-visuallyhidden"><?php printf( esc_html__( '%s Search', 'the-events-calendar' ), tribe_get_event_label_plural() ); ?></h3>
+				<div id="myu-bar-filters" class="myu-bar-filters" aria-hidden="true">
+					<div class="myu-bar-filters-inner myu-clearfix">
+						<h3 class="myu-events-visuallyhidden"><?php printf( esc_html__( '%s Search', 'the-events-calendar' ), tribe_get_event_label_plural() ); ?></h3>
 						<?php foreach ( $filters as $filter ) : ?>
 							<div class="<?php echo esc_attr( $filter['name'] ) ?>-filter">
 								<label class="label-<?php echo esc_attr( $filter['name'] ) ?>" for="<?php echo esc_attr( $filter['name'] ) ?>"><?php echo $filter['caption'] ?></label>
 								<?php echo $filter['html'] ?>
 							</div>
 						<?php endforeach; ?>
-						<div class="tribe-bar-submit">
+						<div class="myu-bar-submit">
 							<input
-								class="tribe-events-button tribe-no-param"
+								class="myu-events-button myu-no-param"
 								type="submit"
 								name="submit-bar"
 								aria-label="<?php printf( esc_attr__( 'Submit %s search', 'the-events-calendar' ), tribe_get_event_label_plural() ); ?>"
@@ -81,14 +81,14 @@ if ( count( $views ) > 1 ) {
 		<?php endif; ?>
 
 		<?php if ( count( $views ) > 1 ) : ?>
-			<div id="tribe-bar-views" class="tribe-bar-views">
-				<div class="tribe-bar-views-inner tribe-clearfix">
-					<h3 class="tribe-events-visuallyhidden"><?php printf( esc_html__( '%s Views Navigation', 'the-events-calendar' ), tribe_get_event_label_singular() ); ?></h3>
-					<label id="tribe-bar-views-label" aria-label="<?php printf( esc_html__( 'View %s As', 'the-events-calendar' ), tribe_get_event_label_plural() ); ?>">
+			<div id="myu-bar-views" class="myu-bar-views">
+				<div class="myu-bar-views-inner myu-clearfix">
+					<h3 class="myu-events-visuallyhidden"><?php printf( esc_html__( '%s Views Navigation', 'the-events-calendar' ), tribe_get_event_label_singular() ); ?></h3>
+					<label id="myu-bar-views-label" aria-label="<?php printf( esc_html__( 'View %s As', 'the-events-calendar' ), tribe_get_event_label_plural() ); ?>">
 						<?php esc_html_e( 'View As', 'the-events-calendar' ); ?>
 					</label>
 					<select
-						class="tribe-bar-views-select tribe-no-param"
+						class="myu-bar-views-select myu-no-param"
 						name="tribe-bar-view"
 						aria-label="<?php printf( esc_attr__( 'View %s As', 'the-events-calendar' ), tribe_get_event_label_plural() ); ?>"
 					>

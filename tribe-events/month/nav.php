@@ -16,13 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php do_action( 'tribe_events_before_nav' ) ?>
 
-<nav class="tribe-events-nav-pagination" aria-label="<?php esc_html_e( 'Calendar Month Navigation', 'the-events-calendar' ) ?>">
-	<ul class="tribe-events-sub-nav">
-		<li class="tribe-events-nav-previous">
+<nav class="myu-events-nav-pagination" aria-label="<?php esc_html_e( 'Calendar Month Navigation', 'the-events-calendar' ) ?>">
+	<ul class="myu-events-sub-nav">
+		<li class="myu-events-nav-previous">
 			<?php tribe_events_the_previous_month_link(); ?>
 		</li>
 		<!-- .tribe-events-nav-previous -->
-		<li class="tribe-events-nav-next">
+		<li class="myu-events-nav-next">
 			<?php tribe_events_the_next_month_link(); ?>
 		</li>
 		<!-- .tribe-events-nav-next -->

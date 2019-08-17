@@ -10,45 +10,45 @@
 ?>
 
 <script type="text/html" id="tribe_tmpl_tooltip">
-	<div id="tribe-events-tooltip-[[=eventId]]" class="tribe-events-tooltip">
+	<div id="myu-events-tooltip-[[=eventId]]" class="myu-events-tooltip">
 		<h3 class="entry-title summary">[[=raw title]]<\/h3>
 
-		<div class="tribe-events-event-body">
-			<div class="tribe-event-duration">
-				<abbr class="tribe-events-abbr tribe-event-date-start">[[=dateDisplay]] <\/abbr>
+		<div class="myu-events-event-body">
+			<div class="myu-event-duration">
+				<abbr class="myu-events-abbr myu-event-date-start">[[=dateDisplay]] <\/abbr>
 			<\/div>
 			[[ if(imageTooltipSrc.length) { ]]
-			<div class="tribe-events-event-thumb">
+			<div class="myu-events-event-thumb">
 				<img src="[[=imageTooltipSrc]]" alt="[[=title]]" \/>
 			<\/div>
 			[[ } ]]
 			[[ if(excerpt.length) { ]]
-			<div class="tribe-event-description">[[=raw excerpt]]<\/div>
+			<div class="myu-event-description">[[=raw excerpt]]<\/div>
 			[[ } ]]
-			<span class="tribe-events-arrow"><\/span>
+			<span class="myu-events-arrow"><\/span>
 		<\/div>
 	<\/div>
 </script>
 
-<script type="text/html" id="tribe_tmpl_tooltip_featured">
-	<div id="tribe-events-tooltip-[[=eventId]]" class="tribe-events-tooltip tribe-event-featured">
+<script type="text/html" id="myu_tmpl_tooltip_featured">
+	<div id="myu-events-tooltip-[[=eventId]]" class="myu-events-tooltip myu-event-featured">
 		[[ if(imageTooltipSrc.length) { ]]
-			<div class="tribe-events-event-thumb">
+			<div class="myu-events-event-thumb">
 				<img src="[[=imageTooltipSrc]]" alt="[[=title]]" \/>
 			<\/div>
 		[[ } ]]
 
 		<h3 class="entry-title summary">[[=raw title]]<\/h3>
 
-		<div class="tribe-events-event-body">
-			<div class="tribe-event-duration">
-				<abbr class="tribe-events-abbr tribe-event-date-start">[[=dateDisplay]] <\/abbr>
+		<div class="myu-events-event-body">
+			<div class="myu-event-duration">
+				<abbr class="myu-events-abbr myu-event-date-start">[[=dateDisplay]] <\/abbr>
 			<\/div>
 
 			[[ if(excerpt.length) { ]]
-			<div class="tribe-event-description">[[=raw excerpt]]<\/div>
+			<div class="myu-event-description">[[=raw excerpt]]<\/div>
 			[[ } ]]
-			<span class="tribe-events-arrow"><\/span>
+			<span class="myu-events-arrow"><\/span>
 		<\/div>
 	<\/div>
 </script>

@@ -20,7 +20,7 @@ $date_label = date_i18n( tribe_get_date_option( 'dateWithoutYearFormat', 'F j' )
 ?>
 
 <!-- Day Header -->
-<div id="tribe-events-daynum-<?php echo $day['daynum-id'] ?>">
+<div id="myu-events-daynum-<?php echo $day['daynum-id'] ?>">
 
 	<?php if ( $day['total_events'] > 0 && tribe_events_is_view_enabled( 'day' ) ) : ?>
 		<?php $view_day_label = sprintf( __( 'View %s', 'the-events-calendar' ), $date_label ); ?>
@@ -40,7 +40,7 @@ $date_label = date_i18n( tribe_get_date_option( 'dateWithoutYearFormat', 'F j' )
 
 <!-- View More -->
 <?php if ( $day['view_more'] ) : ?>
-	<div class="tribe-events-viewmore">
+	<div class="myu-events-viewmore">
 		<?php
 
 			$view_all_label = sprintf(

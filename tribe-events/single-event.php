@@ -22,9 +22,10 @@ $event_id = get_the_ID();
 
 ?>
 
-<div id="tribe-events-content" class="tribe-events-single">
+<!-- single-event ここから -->
+<div id="myu-events-content" class="myu-events-single">
 
-	<p class="tribe-events-back">
+	<p class="myu-events-back">
 		<a href="<?php echo esc_url( tribe_get_events_link() ); ?>"> <?php printf( '&laquo; ' . esc_html_x( 'All %s', '%s Events plural label', 'the-events-calendar' ), $events_label_plural ); ?></a>
 	</p>
 
@@ -33,20 +34,20 @@ $event_id = get_the_ID();
 
 	<?php the_title( '<h1 class="tribe-events-single-event-title">', '</h1>' ); ?>
 
-	<div class="tribe-events-schedule tribe-clearfix">
+	<div class="myu-events-schedule myu-clearfix">
 		<?php echo tribe_events_event_schedule_details( $event_id, '<h2>', '</h2>' ); ?>
 		<?php if ( tribe_get_cost() ) : ?>
-			<span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
+			<span class="myu-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
 		<?php endif; ?>
 	</div>
 
 	<!-- Event header -->
-	<div id="tribe-events-header" <?php tribe_events_the_header_attributes() ?>>
+	<div id="myu-events-header" <?php tribe_events_the_header_attributes() ?>>
 		<!-- Navigation -->
-		<nav class="tribe-events-nav-pagination" aria-label="<?php printf( esc_html__( '%s Navigation', 'the-events-calendar' ), $events_label_singular ); ?>">
-			<ul class="tribe-events-sub-nav">
-				<li class="tribe-events-nav-previous"><?php tribe_the_prev_event_link( '<span>&laquo;</span> %title%' ) ?></li>
-				<li class="tribe-events-nav-next"><?php tribe_the_next_event_link( '%title% <span>&raquo;</span>' ) ?></li>
+		<nav class="myu-events-nav-pagination" aria-label="<?php printf( esc_html__( '%s Navigation', 'the-events-calendar' ), $events_label_singular ); ?>">
+			<ul class="myu-events-sub-nav">
+				<li class="myu-events-nav-previous"><?php tribe_the_prev_event_link( '<span>&laquo;</span> %title%' ) ?></li>
+				<li class="myu-events-nav-next"><?php tribe_the_next_event_link( '%title% <span>&raquo;</span>' ) ?></li>
 			</ul>
 			<!-- .tribe-events-sub-nav -->
 		</nav>
@@ -60,7 +61,7 @@ $event_id = get_the_ID();
 
 			<!-- Event content -->
 			<?php do_action( 'tribe_events_single_event_before_the_content' ) ?>
-			<div class="tribe-events-single-event-description tribe-events-content">
+			<div class="myu-events-single-event-description myu-events-content">
 				<?php the_content(); ?>
 			</div>
 			<!-- .tribe-events-single-event-description -->
@@ -75,16 +76,17 @@ $event_id = get_the_ID();
 	<?php endwhile; ?>
 
 	<!-- Event footer -->
-	<div id="tribe-events-footer">
+	<div id="myu-events-footer">
 		<!-- Navigation -->
-		<nav class="tribe-events-nav-pagination" aria-label="<?php printf( esc_html__( '%s Navigation', 'the-events-calendar' ), $events_label_singular ); ?>">
-			<ul class="tribe-events-sub-nav">
-				<li class="tribe-events-nav-previous"><?php tribe_the_prev_event_link( '<span>&laquo;</span> %title%' ) ?></li>
-				<li class="tribe-events-nav-next"><?php tribe_the_next_event_link( '%title% <span>&raquo;</span>' ) ?></li>
+		<nav class="myu-events-nav-pagination" aria-label="<?php printf( esc_html__( '%s Navigation', 'the-events-calendar' ), $events_label_singular ); ?>">
+			<ul class="myu-events-sub-nav">
+				<li class="myu-events-nav-previous"><?php tribe_the_prev_event_link( '<span>&laquo;</span> %title%' ) ?></li>
+				<li class="myu-events-nav-next"><?php tribe_the_next_event_link( '%title% <span>&raquo;</span>' ) ?></li>
 			</ul>
-			<!-- .tribe-events-sub-nav -->
+			<!-- .myu-events-sub-nav -->
 		</nav>
 	</div>
-	<!-- #tribe-events-footer -->
+	<!-- #myu-events-footer -->
 
-</div><!-- #tribe-events-content -->
+</div><!-- #myu-events-content -->
+<!-- single-event ここまで -->

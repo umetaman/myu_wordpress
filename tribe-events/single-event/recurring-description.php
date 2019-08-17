@@ -17,7 +17,7 @@ $recurrence_data = get_post_meta( $post_id, '_EventRecurrence', true );
 $recurrence_description = $recurrence_data['description'] ? $recurrence_data['description'] : esc_html__( 'Recurring event', 'the-events-calendar' );
 ?>
 
-<div class="tribe-events-single-event-recurrence-description">
+<div class="myu-events-single-event-recurrence-description">
 	<img src="<?php echo Tribe__Main::instance()->plugin_url  . 'src/modules/icons/recurrence.svg'; ?>" />
 
 	<span><?php echo $recurrence_description ?></span>
