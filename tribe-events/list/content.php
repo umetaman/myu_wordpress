@@ -19,8 +19,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 	<?php
-	//タイトルに余計な文字列が入るので削除
-	// do_action( 'tribe_events_list_before_the_content' );
+	/**
+	 * Fires before any content is printed inside the list view.
+	 */
+	do_action( 'tribe_events_list_before_the_content' );
 	?>
 
 	<!-- Notices -->

@@ -33,48 +33,83 @@ $posts = tribe_get_list_widget_events();
 // Check if any event posts are found.
 if ( $posts ) : ?>
 
-	<ul class="myu-list-widget">
+	<ol class="tribe-list-widget">
 		<?php
 		// Setup the post data for each event.
 		foreach ( $posts as $post ) :
 			setup_postdata( $post );
 			?>
-			<li class="myu-list-widget-element myu-events-list-widget-events <?php tribe_events_event_classes() ?>">
+			<li class="tribe-events-list-widget-events <?php tribe_events_event_classes() ?>">
 				<?php
-				// イベントの画像があるかどうかを判断する
-				$thumbnail_url = get_template_directory_uri().'/images/no_image.jpg';
-				if(has_post_thumbnail()){
-					$thumbnail_url = get_the_post_thumbnail_url();
+				if (
+					tribe( 'tec.featured_events' )->is_featured( get_the_ID() )
+					&& get_post_thumbnail_id( $post )
+				) {
+					/**
+					 * Fire an action before the list widget featured image
+					 */
+					do_action( 'tribe_events_list_widget_before_the_event_image' );
+
+					/**
+					 * Allow the default post thumbnail size to be filtered
+					 *
+					 * @param $size
+					 */
+					$thumbnail_size = apply_filters( 'tribe_events_list_widget_thumbnail_size', 'post-thumbnail' );
+
+					/**
+					 * Filters whether the featured image link should be added to the Events List Widget
+					 *
+					 * @since 4.5.13
+					 *
+					 * @param bool $featured_image_link Whether the featured image link should be added or not
+					 */
+					$featured_image_link = apply_filters( 'tribe_events_list_widget_featured_image_link', true );
+					$post_thumbnail      = get_the_post_thumbnail( null, $thumbnail_size );
+
+					if ( $featured_image_link ) {
+						$post_thumbnail = '<a href="' . esc_url( tribe_get_event_link() ) . '">' . $post_thumbnail . '</a>';
+					}
+					?>
+					<div class="tribe-event-image">
+						<?php
+						// not escaped because it contains markup
+						echo $post_thumbnail;
+						?>
+					</div>
+					<?php
+
+					/**
+					 * Fire an action after the list widget featured image
+					 */
+					do_action( 'tribe_events_list_widget_after_the_event_image' );
 				}
 				?>
-				<div class="myu-event-thumbnail-wrapper">
-					<img src="<?php echo $thumbnail_url; ?>" alt="<?php echo the_title(); ?>">
+
+				<?php do_action( 'tribe_events_list_widget_before_the_event_title' ); ?>
+				<!-- Event Title -->
+				<h4 class="tribe-event-title">
+					<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" rel="bookmark"><?php the_title(); ?></a>
+				</h4>
+
+				<?php do_action( 'tribe_events_list_widget_after_the_event_title' ); ?>
+				<!-- Event Time -->
+
+				<?php do_action( 'tribe_events_list_widget_before_the_meta' ) ?>
+
+				<div class="tribe-event-duration">
+					<?php echo tribe_events_event_schedule_details(); ?>
 				</div>
 
-				<div class="myu-event-info-wrapper">
-					<?php do_action( 'tribe_events_list_widget_before_the_event_title' ); ?>
-					<!-- イベントのタイトル -->
-					<h3 class="myu-event-title">
-						<?php the_title(); ?>
-					</h3>
-					
-					<?php do_action( 'tribe_events_list_widget_after_the_event_title' ); ?>
-					<!-- イベントの期間 -->
-					<?php do_action( 'tribe_events_list_widget_before_the_meta' ) ?>
-					<div class="myu-event-duration">
-						<p><i class="far fa-calendar"></i><?php echo tribe_events_event_schedule_details(); ?></p>
-					</div>
-					<?php do_action( 'tribe_events_list_widget_after_the_meta' ) ?>
-				</div>
-				<a class="myu-event-widget-link" href="<?php echo esc_url( tribe_get_event_link() ); ?>"></a>
+				<?php do_action( 'tribe_events_list_widget_after_the_meta' ) ?>
 			</li>
 		<?php
 		endforeach;
 		?>
-	</ul>
+	</ol><!-- .tribe-list-widget -->
 
-	<p class="myu-events-widget-link">
-		<a id="widget-events-link-btn" class="myu-btn" href="<?php echo esc_url( tribe_get_events_link() ); ?>" rel="bookmark"><?php printf( esc_html__( 'View All %s', 'the-events-calendar' ), $events_label_plural ); ?></a>
+	<p class="tribe-events-widget-link">
+		<a href="<?php echo esc_url( tribe_get_events_link() ); ?>" rel="bookmark"><?php printf( esc_html__( 'View All %s', 'the-events-calendar' ), $events_label_plural ); ?></a>
 	</p>
 
 <?php

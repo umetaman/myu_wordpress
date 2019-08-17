@@ -24,7 +24,7 @@ if ( ! empty( $event_id ) && function_exists( 'tribe_is_recurring_event' ) ) {
 }
 ?>
 
-<div id="myu-events-content" class="myu-events-single">
+<div id="tribe-events-content" class="tribe-events-single tribe-blocks-editor">
 	<?php $this->template( 'single-event/back-link' ); ?>
 	<?php $this->template( 'single-event/notices' ); ?>
 	<?php $this->template( 'single-event/title' ); ?>
