@@ -137,8 +137,14 @@ ul.myu-list-widget > li.myu-list-widget-element > .myu-event-info-wrapper .myu-e
   color: #ffffff;
 }
 
-.myu-main-widget {
+/*
+    MYU Main Widget
+*/
+div.myu-main-widget {
   margin: 70px 0px;
+}
+div.myu-main-widget > p {
+  text-align: center;
 }
 
 /*# sourceMappingURL=widgets.css.map */

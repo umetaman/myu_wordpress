@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 /*
     MYU Latest Posts
 */
@@ -169,6 +171,14 @@ ul.myu-list-widget{
     color: #ffffff;
 }
 
-.myu-main-widget{
+
+/*
+    MYU Main Widget
+*/
+div.myu-main-widget{
     margin: 70px 0px;
+
+    > p{
+        text-align: center;
+    }
 }

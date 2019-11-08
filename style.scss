@@ -64,6 +64,7 @@ div.contents{
 }
 
 // 投稿
+// 横のmarginは取らない
 article.post-article{
     // タイトル
     h1#post-title{
@@ -71,17 +72,43 @@ article.post-article{
         font-size: 30px;
     }
     h1, h2, h3, h4, h5, h6{
-        margin: 6px 12px;
+        margin-top: 8px;
+        margin-bottom: 16px;
     }
     // サムネイル
     div.post-image > img{
         width: 100%;
         height: auto;
-        margin: 24px 0px;
+        margin-top: 0;
+        margin-bottom: 16px;
     }
     // 本文
     p{
-        margin: 0px 16px;
+        margin-bottom: 16px;
+    }
+    //テーブル
+    //テーブルは例外的に上下にmarginを取る
+    table.wp-block-table{
+        width: 100%;
+        margin: 16px 0px;
+        border-collapse: collapse;
+        border-spacing: 0;
+
+        th, td{
+            padding: 10px 10px;
+        }
+
+        th:nth-child(n + 2), td:nth-child(n + 2){
+            border-left: #ffffff 2px solid;
+        }
+
+        tr:nth-child(odd){
+            background: #eee;
+        }
+    }
+    //リスト
+    ul{
+        padding-left: 28px;
     }
 }
 
